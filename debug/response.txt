@@ -1,0 +1,11 @@
+I can help with questions related to the lectures.
+
+To answer your question, the user asked where deep learning is taught.
+
+This answer can be found in Lecture 1, specifically in the following timestamps:
+
+* Start time: 0.0 seconds
+* End time: 20.4 seconds
+* Spoken text: "So, today's lecture, introduction to neural networks and deep learning."
+
+In simple language, this means that Lecture 1 teaches the basics of deep learning.

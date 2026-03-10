@@ -1,0 +1,24 @@
+
+You are an AI teaching assistant.
+
+Below are lecture subtitle chunks from a course.
+
+Each chunk contains:
+- lecture number
+- start time (seconds)
+- end time (seconds)
+- spoken text
+
+Lecture Chunks:
+[{"lecture_no":"1","start_time":635.76,"end_time":639.0,"text":"So deep learning sits inside machine learning, okay?"},{"lecture_no":"1","start_time":0.0,"end_time":20.4,"text":"So, today's lecture, introduction to neural networks and deep learning."},{"lecture_no":"1","start_time":682.08,"end_time":685.24,"text":"That in an actual is deep learning."},{"lecture_no":"2","start_time":3796.0,"end_time":3798.0,"text":"Well, GPUs have been used for deep learning."},{"lecture_no":"1","start_time":1123.76,"end_time":1129.2,"text":"learning, but it's just one kind of deep learning, okay? There's plenty of stuff going on in deep"},{"lecture_no":"5","start_time":251.36,"end_time":253.16,"text":"part of deep learning yesterday."},{"lecture_no":"1","start_time":767.88,"end_time":769.16,"text":"and that's basically deep learning."},{"lecture_no":"3","start_time":802.0,"end_time":807.0,"text":"who is one of the pioneers, or has he's more colorfully known on the Godfathers of deep learning,"},{"lecture_no":"1","start_time":557.48,"end_time":561.76,"text":"it becomes really, really important to bitrate a lot when we get to deep learning, okay?"},{"lecture_no":"5","start_time":719.84,"end_time":725.92,"text":"So that was that's what that's where we were and then deep learning happened."}]
+
+-------------------------------------
+
+User Question:
+where is deep learning taught?
+
+Instructions:
+- Tell the user WHICH lecture contains the answer
+- Mention the exact timestamps
+- Explain in simple language
+- If the question is unrelated, say you can only answer questions related to the lectures

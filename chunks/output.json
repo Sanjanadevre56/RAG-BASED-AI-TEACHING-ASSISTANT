@@ -1,0 +1,3492 @@
+[
+    {
+        "start_time": "00:00:00",
+        "end_time": "00:00:20",
+        "text": "So, today's lecture, introduction to neural networks and deep learning."
+    },
+    {
+        "start_time": "00:00:20",
+        "end_time": "00:00:25",
+        "text": "So, we will start with a very quick intro to these things and then we will switch and"
+    },
+    {
+        "start_time": "00:00:25",
+        "end_time": "00:00:27",
+        "text": "dive deep into neural networks."
+    },
+    {
+        "start_time": "00:00:27",
+        "end_time": "00:00:31",
+        "text": "So, the field of AI, originate in 1956, sadly, it didn't originate at MIT, it originate"
+    },
+    {
+        "start_time": "00:00:31",
+        "end_time": "00:00:34",
+        "text": "at DotMath because all these people got together at DotMath."
+    },
+    {
+        "start_time": "00:00:34",
+        "end_time": "00:00:36",
+        "text": "I guess it's got a nice quad or whatever."
+    },
+    {
+        "start_time": "00:00:36",
+        "end_time": "00:00:39",
+        "text": "They got together, they defined the field."
+    },
+    {
+        "start_time": "00:00:39",
+        "end_time": "00:00:42",
+        "text": "But fortunately for us, MIT was very well represented."
+    },
+    {
+        "start_time": "00:00:42",
+        "end_time": "00:00:47",
+        "text": "So we have Marvin Minsky, who founded the MIT AI Lab, John McCarthy, who invented"
+    },
+    {
+        "start_time": "00:00:47",
+        "end_time": "00:00:53",
+        "text": "Lisp and then later defected to the West Coast and then Claude Shannon, who invented information"
+    },
+    {
+        "start_time": "00:00:53",
+        "end_time": "00:00:55",
+        "text": "theory, right, who was a professor at MIT."
+    },
+    {
+        "start_time": "00:00:55",
+        "end_time": "00:00:57",
+        "text": "So, MIT was well represented."
+    },
+    {
+        "start_time": "00:00:57",
+        "end_time": "00:01:01",
+        "text": "These folks founded the field and they were so bright, they thought that AI was going"
+    },
+    {
+        "start_time": "00:01:01",
+        "end_time": "00:01:06",
+        "text": "to be substantially solved, quote unquote, by that fall."
+    },
+    {
+        "start_time": "00:01:06",
+        "end_time": "00:01:07",
+        "text": "Okay?"
+    },
+    {
+        "start_time": "00:01:07",
+        "end_time": "00:01:10",
+        "text": "Now, obviously, it turned out to be differently than what they expected."
+    },
+    {
+        "start_time": "00:01:10",
+        "end_time": "00:01:14",
+        "text": "So, it's been, whatever, 67, 68 years since it's founding."
+    },
+    {
+        "start_time": "00:01:14",
+        "end_time": "00:01:19",
+        "text": "So, it's gone through, essentially, in my opinion, three seminal breakthroughs, starting"
+    },
+    {
+        "start_time": "00:01:19",
+        "end_time": "00:01:22",
+        "text": "with the traditional approach, then machine learning, deep learning, and generative AI."
+    },
+    {
+        "start_time": "00:01:22",
+        "end_time": "00:01:26",
+        "text": "So, let's take a very quick look at each of these breakthroughs and what motivated them."
+    },
+    {
+        "start_time": "00:01:26",
+        "end_time": "00:01:29",
+        "text": "So let's start with the traditional approach to AI."
+    },
+    {
+        "start_time": "00:01:29",
+        "end_time": "00:01:31",
+        "text": "And so, what is AI?"
+    },
+    {
+        "start_time": "00:01:31",
+        "end_time": "00:01:37",
+        "text": "AI informally is the ability to imbue computers with the ability to do things that only humans"
+    },
+    {
+        "start_time": "00:01:37",
+        "end_time": "00:01:38",
+        "text": "can typically do."
+    },
+    {
+        "start_time": "00:01:38",
+        "end_time": "00:01:40",
+        "text": "Cognitive task, thinking tasks and things like that."
+    },
+    {
+        "start_time": "00:01:40",
+        "end_time": "00:01:45",
+        "text": "And so, the most common senseical way to do that is to say, well, if I want the computer"
+    },
+    {
+        "start_time": "00:01:45",
+        "end_time": "00:01:48",
+        "text": "to do something complicated like play chess, I'm just going to sit down with a few chess"
+    },
+    {
+        "start_time": "00:01:48",
+        "end_time": "00:01:53",
+        "text": "grandmasters, show them a whole bunch of board moves, and ask them how they figure out"
+    },
+    {
+        "start_time": "00:01:53",
+        "end_time": "00:01:55",
+        "text": "how to respond, how to play the next move."
+    },
+    {
+        "start_time": "00:01:55",
+        "end_time": "00:01:57",
+        "text": "I'm going to sort of sit down, talk to all these people, and then I'm going to write"
+    },
+    {
+        "start_time": "00:01:57",
+        "end_time": "00:01:59",
+        "text": "down a whole bunch of rules."
+    },
+    {
+        "start_time": "00:01:59",
+        "end_time": "00:02:02",
+        "text": "If this is the board position, move this, if this is the board position, move this, and"
+    },
+    {
+        "start_time": "00:02:02",
+        "end_time": "00:02:03",
+        "text": "so on and so forth."
+    },
+    {
+        "start_time": "00:02:03",
+        "end_time": "00:02:07",
+        "text": "Or I might sit down with a cardiologist and tell them, okay, how do you actually interpret"
+    },
+    {
+        "start_time": "00:02:07",
+        "end_time": "00:02:08",
+        "text": "an ECG?"
+    },
+    {
+        "start_time": "00:02:08",
+        "end_time": "00:02:11",
+        "text": "They will give me all the similarly a bunch of if-then rules."
+    },
+    {
+        "start_time": "00:02:11",
+        "end_time": "00:02:14",
+        "text": "I will take all these rules, I'll put them into the computer, and boom, I have a system"
+    },
+    {
+        "start_time": "00:02:14",
+        "end_time": "00:02:15",
+        "text": "that can do what a human can do."
+    },
+    {
+        "start_time": "00:02:15",
+        "end_time": "00:02:16",
+        "text": "Right?"
+    },
+    {
+        "start_time": "00:02:16",
+        "end_time": "00:02:21",
+        "text": "This approach, even though it's common senseical and can I make sense, it had success in only"
+    },
+    {
+        "start_time": "00:02:21",
+        "end_time": "00:02:23",
+        "text": "a few areas."
+    },
+    {
+        "start_time": "00:02:23",
+        "end_time": "00:02:28",
+        "text": "And so the interesting question is, why was it not pervasively successful?"
+    },
+    {
+        "start_time": "00:02:28",
+        "end_time": "00:02:29",
+        "text": "Why was it not pervasively successful?"
+    },
+    {
+        "start_time": "00:02:29",
+        "end_time": "00:02:31",
+        "text": "It seems like a pretty good idea to me."
+    },
+    {
+        "start_time": "00:02:31",
+        "end_time": "00:02:35",
+        "text": "And the people who came over these things are smart people, they're not dumb people,"
+    },
+    {
+        "start_time": "00:02:35",
+        "end_time": "00:02:36",
+        "text": "they know what they are doing."
+    },
+    {
+        "start_time": "00:02:36",
+        "end_time": "00:02:39",
+        "text": "So why did it not work?"
+    },
+    {
+        "start_time": "00:02:39",
+        "end_time": "00:02:44",
+        "text": "Because it's not in the intensive, so in things like working on through all these areas"
+    },
+    {
+        "start_time": "00:02:44",
+        "end_time": "00:02:51",
+        "text": "that have ever existed, and some users have come up with a unit capable for engine."
+    },
+    {
+        "start_time": "00:02:51",
+        "end_time": "00:02:54",
+        "text": "Right, so there are two aspects to what you said, which is the first aspect is its time"
+    },
+    {
+        "start_time": "00:02:54",
+        "end_time": "00:02:55",
+        "text": "intensive."
+    },
+    {
+        "start_time": "00:02:55",
+        "end_time": "00:02:59",
+        "text": "That as it turns out, it's not a big deal because computers are getting faster and faster."
+    },
+    {
+        "start_time": "00:02:59",
+        "end_time": "00:03:03",
+        "text": "The second thing is actually the key thing, which is that it doesn't generalize to new"
+    },
+    {
+        "start_time": "00:03:03",
+        "end_time": "00:03:06",
+        "text": "situations very well."
+    },
+    {
+        "start_time": "00:03:06",
+        "end_time": "00:03:09",
+        "text": "The problem is, there are an infinite number of things that you're going to see when"
+    },
+    {
+        "start_time": "00:03:09",
+        "end_time": "00:03:11",
+        "text": "you deploy the systems in the real world."
+    },
+    {
+        "start_time": "00:03:11",
+        "end_time": "00:03:15",
+        "text": "By definition, what you're training it on is a small sample of rules."
+    },
+    {
+        "start_time": "00:03:15",
+        "end_time": "00:03:16",
+        "text": "So these rules are very brittle."
+    },
+    {
+        "start_time": "00:03:16",
+        "end_time": "00:03:19",
+        "text": "But there's actually even more interesting reason."
+    },
+    {
+        "start_time": "00:03:19",
+        "end_time": "00:03:24",
+        "text": "And that reason is that we know more than we can tell."
+    },
+    {
+        "start_time": "00:03:24",
+        "end_time": "00:03:25",
+        "text": "This is called Polani's paradox."
+    },
+    {
+        "start_time": "00:03:25",
+        "end_time": "00:03:29",
+        "text": "So the idea is that if I come to you and say, hey, here's a picture, is it a dog or"
+    },
+    {
+        "start_time": "00:03:29",
+        "end_time": "00:03:34",
+        "text": "a cat, you will tell me within, I believe, they're measured at like 20 milliseconds or"
+    },
+    {
+        "start_time": "00:03:34",
+        "end_time": "00:03:36",
+        "text": "something, you know it's a dog or a cat."
+    },
+    {
+        "start_time": "00:03:36",
+        "end_time": "00:03:40",
+        "text": "And then if I ask you to explain to me exactly how you figure that out, you'll come up with"
+    },
+    {
+        "start_time": "00:03:40",
+        "end_time": "00:03:43",
+        "text": "a bunch of sort of reasons, alleged reasons."
+    },
+    {
+        "start_time": "00:03:43",
+        "end_time": "00:03:46",
+        "text": "Or if it has whiskers, I think it's a cat or whatever."
+    },
+    {
+        "start_time": "00:03:46",
+        "end_time": "00:03:49",
+        "text": "But the problem is that you actually, first of all, can't really articulate what's going"
+    },
+    {
+        "start_time": "00:03:49",
+        "end_time": "00:03:51",
+        "text": "on in your head, how you do these things."
+    },
+    {
+        "start_time": "00:03:51",
+        "end_time": "00:03:55",
+        "text": "And number two, even if you articulate it, oftentimes your articulation has no correspondence"
+    },
+    {
+        "start_time": "00:03:55",
+        "end_time": "00:03:58",
+        "text": "with how your brain actually does it."
+    },
+    {
+        "start_time": "00:03:58",
+        "end_time": "00:04:01",
+        "text": "So you're incomplete underlier."
+    },
+    {
+        "start_time": "00:04:01",
+        "end_time": "00:04:03",
+        "text": "So this is Polani's paradox."
+    },
+    {
+        "start_time": "00:04:03",
+        "end_time": "00:04:07",
+        "text": "So if you can't even tell me how you do something, how the heck am I supposed to take it"
+    },
+    {
+        "start_time": "00:04:07",
+        "end_time": "00:04:09",
+        "text": "and put it into a computer?"
+    },
+    {
+        "start_time": "00:04:09",
+        "end_time": "00:04:10",
+        "text": "It doesn't work."
+    },
+    {
+        "start_time": "00:04:10",
+        "end_time": "00:04:14",
+        "text": "And second is the fact that we can't write down these rules for all possible situations,"
+    },
+    {
+        "start_time": "00:04:14",
+        "end_time": "00:04:16",
+        "text": "edge cases, corner cases, et cetera."
+    },
+    {
+        "start_time": "00:04:16",
+        "end_time": "00:04:18",
+        "text": "And the world is full of edge cases."
+    },
+    {
+        "start_time": "00:04:18",
+        "end_time": "00:04:21",
+        "text": "So for these reasons, this approach didn't work."
+    },
+    {
+        "start_time": "00:04:21",
+        "end_time": "00:04:23",
+        "text": "And so a different approach was developed."
+    },
+    {
+        "start_time": "00:04:23",
+        "end_time": "00:04:27",
+        "text": "And this approach was, well, basically said, instead of explicitly telling the computer"
+    },
+    {
+        "start_time": "00:04:27",
+        "end_time": "00:04:32",
+        "text": "what to do, why don't we simply give it lots of examples of inputs and outputs,"
+    },
+    {
+        "start_time": "00:04:32",
+        "end_time": "00:04:34",
+        "text": "chess positions, next move, right?"
+    },
+    {
+        "start_time": "00:04:34",
+        "end_time": "00:04:36",
+        "text": "ECG diagnosis, right?"
+    },
+    {
+        "start_time": "00:04:36",
+        "end_time": "00:04:38",
+        "text": "So we can use inputs and outputs."
+    },
+    {
+        "start_time": "00:04:38",
+        "end_time": "00:04:42",
+        "text": "And then why don't we just use some statistical techniques to learn a mapping of function that"
+    },
+    {
+        "start_time": "00:04:42",
+        "end_time": "00:04:44",
+        "text": "can go from the input to the output?"
+    },
+    {
+        "start_time": "00:04:44",
+        "end_time": "00:04:46",
+        "text": "That was the idea."
+    },
+    {
+        "start_time": "00:04:46",
+        "end_time": "00:04:47",
+        "text": "And this idea is machine learning."
+    },
+    {
+        "start_time": "00:04:47",
+        "end_time": "00:04:48",
+        "text": "Okay?"
+    },
+    {
+        "start_time": "00:04:48",
+        "end_time": "00:04:53",
+        "text": "So machine learning is basically just a fancy way of saying learn from input output examples"
+    },
+    {
+        "start_time": "00:04:53",
+        "end_time": "00:04:55",
+        "text": "using statistical techniques."
+    },
+    {
+        "start_time": "00:04:55",
+        "end_time": "00:04:56",
+        "text": "Good."
+    },
+    {
+        "start_time": "00:04:56",
+        "end_time": "00:04:57",
+        "text": "All right."
+    },
+    {
+        "start_time": "00:04:57",
+        "end_time": "00:05:01",
+        "text": "So now there are numerous ways to create machine learning models."
+    },
+    {
+        "start_time": "00:05:01",
+        "end_time": "00:05:04",
+        "text": "And if you have ever done linear regression, congratulations, you've been doing machine"
+    },
+    {
+        "start_time": "00:05:04",
+        "end_time": "00:05:05",
+        "text": "learning."
+    },
+    {
+        "start_time": "00:05:05",
+        "end_time": "00:05:06",
+        "text": "Okay?"
+    },
+    {
+        "start_time": "00:05:06",
+        "end_time": "00:05:07",
+        "text": "Okay?"
+    },
+    {
+        "start_time": "00:05:07",
+        "end_time": "00:05:10",
+        "text": "And only one of those methods happens to be something called neural networks."
+    },
+    {
+        "start_time": "00:05:10",
+        "end_time": "00:05:12",
+        "text": "There are many other methods."
+    },
+    {
+        "start_time": "00:05:12",
+        "end_time": "00:05:16",
+        "text": "And in fact, you probably have done these other methods if you have done the course"
+    },
+    {
+        "start_time": "00:05:16",
+        "end_time": "00:05:17",
+        "text": "like analytics edge or something similar."
+    },
+    {
+        "start_time": "00:05:19",
+        "end_time": "00:05:19",
+        "text": "Okay."
+    },
+    {
+        "start_time": "00:05:19",
+        "end_time": "00:05:23",
+        "text": "So machine learning has got tremendous impact around the world, right?"
+    },
+    {
+        "start_time": "00:05:23",
+        "end_time": "00:05:26",
+        "text": "It's like, at this point, it's widely accepted."
+    },
+    {
+        "start_time": "00:05:26",
+        "end_time": "00:05:29",
+        "text": "It's a very, very successful technology."
+    },
+    {
+        "start_time": "00:05:29",
+        "end_time": "00:05:33",
+        "text": "And in fact, when our people are actually talking about AI, chances are they're actually"
+    },
+    {
+        "start_time": "00:05:33",
+        "end_time": "00:05:35",
+        "text": "talking about machine learning."
+    },
+    {
+        "start_time": "00:05:35",
+        "end_time": "00:05:39",
+        "text": "It's just that AI sounds cooler."
+    },
+    {
+        "start_time": "00:05:39",
+        "end_time": "00:05:42",
+        "text": "The only problem is for machine learning to work really well, the input data has to be"
+    },
+    {
+        "start_time": "00:05:42",
+        "end_time": "00:05:43",
+        "text": "structured."
+    },
+    {
+        "start_time": "00:05:43",
+        "end_time": "00:05:44",
+        "text": "Okay?"
+    },
+    {
+        "start_time": "00:05:44",
+        "end_time": "00:05:49",
+        "text": "And what I mean by that is data that can essentially be sort of numericalized and stuck into the"
+    },
+    {
+        "start_time": "00:05:49",
+        "end_time": "00:05:52",
+        "text": "columns in Roosevelt spreadsheet."
+    },
+    {
+        "start_time": "00:05:52",
+        "end_time": "00:05:53",
+        "text": "Right?"
+    },
+    {
+        "start_time": "00:05:53",
+        "end_time": "00:05:58",
+        "text": "So for example, here, let's say I want to put together a data set of, you know, patients,"
+    },
+    {
+        "start_time": "00:05:58",
+        "end_time": "00:06:00",
+        "text": "their symptoms and their characteristics."
+    },
+    {
+        "start_time": "00:06:00",
+        "end_time": "00:06:03",
+        "text": "And then in the following year after they showed up at the doctor's office, whether they"
+    },
+    {
+        "start_time": "00:06:03",
+        "end_time": "00:06:05",
+        "text": "had a cardiac recommend or not."
+    },
+    {
+        "start_time": "00:06:05",
+        "end_time": "00:06:09",
+        "text": "I might create a data set like this with age, smoking status, yes, no exercise, blah,"
+    },
+    {
+        "start_time": "00:06:09",
+        "end_time": "00:06:11",
+        "text": "blah, blah, blah, blah."
+    },
+    {
+        "start_time": "00:06:11",
+        "end_time": "00:06:15",
+        "text": "And so either these numbers are numbers, they are numerical or if they are not numerical,"
+    },
+    {
+        "start_time": "00:06:15",
+        "end_time": "00:06:17",
+        "text": "they are categorical, right?"
+    },
+    {
+        "start_time": "00:06:17",
+        "end_time": "00:06:20",
+        "text": "Yes, no, smoking, yes, no, things like that."
+    },
+    {
+        "start_time": "00:06:20",
+        "end_time": "00:06:24",
+        "text": "Which means that if you have categorical variables, you can just numericalize them pretty"
+    },
+    {
+        "start_time": "00:06:24",
+        "end_time": "00:06:25",
+        "text": "easily."
+    },
+    {
+        "start_time": "00:06:25",
+        "end_time": "00:06:27",
+        "text": "You folks have done some machine learning before."
+    },
+    {
+        "start_time": "00:06:27",
+        "end_time": "00:06:30",
+        "text": "So you know, things like one hot end coding and so forth like that can be done to make"
+    },
+    {
+        "start_time": "00:06:30",
+        "end_time": "00:06:31",
+        "text": "them all numerical."
+    },
+    {
+        "start_time": "00:06:31",
+        "end_time": "00:06:36",
+        "text": "And then you can just render the data into the columns and rows of a spreadsheet pretty"
+    },
+    {
+        "start_time": "00:06:36",
+        "end_time": "00:06:37",
+        "text": "easily, right?"
+    },
+    {
+        "start_time": "00:06:37",
+        "end_time": "00:06:39",
+        "text": "That's what I mean by structured data."
+    },
+    {
+        "start_time": "00:06:39",
+        "end_time": "00:06:42",
+        "text": "So when you, but the situation is very different if you have unstructured data."
+    },
+    {
+        "start_time": "00:06:42",
+        "end_time": "00:06:47",
+        "text": "So if you have an image of, you know, a cute puppy, this is my puppy by the way, from"
+    },
+    {
+        "start_time": "00:06:47",
+        "end_time": "00:06:51",
+        "text": "many years ago, sadly, he's no more."
+    },
+    {
+        "start_time": "00:06:51",
+        "end_time": "00:06:52",
+        "text": "But his name was Google."
+    },
+    {
+        "start_time": "00:06:52",
+        "end_time": "00:06:58",
+        "text": "So, yeah, anyway, my DMD alums know Google well."
+    },
+    {
+        "start_time": "00:06:58",
+        "end_time": "00:06:59",
+        "text": "So this Google, right?"
+    },
+    {
+        "start_time": "00:06:59",
+        "end_time": "00:07:04",
+        "text": "If you want to take Google, this picture and figure out how to sort of numericalize it,"
+    },
+    {
+        "start_time": "00:07:04",
+        "end_time": "00:07:07",
+        "text": "the first thing you want to need to understand is that if you actually look at how this picture"
+    },
+    {
+        "start_time": "00:07:07",
+        "end_time": "00:07:13",
+        "text": "is represented inside digitally in the computer, basically every picture like this is represented"
+    },
+    {
+        "start_time": "00:07:13",
+        "end_time": "00:07:16",
+        "text": "using three tables of numbers, okay?"
+    },
+    {
+        "start_time": "00:07:16",
+        "end_time": "00:07:18",
+        "text": "And these, and we'll get to all these numbers mean later on."
+    },
+    {
+        "start_time": "00:07:18",
+        "end_time": "00:07:24",
+        "text": "But the point I'm making is that each number basically represents the amount of light,"
+    },
+    {
+        "start_time": "00:07:24",
+        "end_time": "00:07:25",
+        "text": "right?"
+    },
+    {
+        "start_time": "00:07:25",
+        "end_time": "00:07:29",
+        "text": "And on a scale of 0 to 255, the amount of light in that location in that pixel, that's"
+    },
+    {
+        "start_time": "00:07:29",
+        "end_time": "00:07:31",
+        "text": "all, the amount of light."
+    },
+    {
+        "start_time": "00:07:31",
+        "end_time": "00:07:37",
+        "text": "So basically, this table is the amount of, sorry, this table is the amount of red light,"
+    },
+    {
+        "start_time": "00:07:37",
+        "end_time": "00:07:39",
+        "text": "amount of green light, amount of blue light, okay?"
+    },
+    {
+        "start_time": "00:07:39",
+        "end_time": "00:07:44",
+        "text": "Now, you agree with me that if you, for example, look at something like this and say, okay,"
+    },
+    {
+        "start_time": "00:07:44",
+        "end_time": "00:07:49",
+        "text": "251, at this location, there is a lot of blue light because it's 251, not have a possible"
+    },
+    {
+        "start_time": "00:07:49",
+        "end_time": "00:07:51",
+        "text": "255, right?"
+    },
+    {
+        "start_time": "00:07:51",
+        "end_time": "00:07:55",
+        "text": "Maybe a lot of blue light somewhere here, there's a lot of blue here."
+    },
+    {
+        "start_time": "00:07:55",
+        "end_time": "00:08:03",
+        "text": "Whether that area is blue because of a piece of sky, some water or a bunch of blue paint"
+    },
+    {
+        "start_time": "00:08:03",
+        "end_time": "00:08:06",
+        "text": "could be anything, it's going to say 251."
+    },
+    {
+        "start_time": "00:08:06",
+        "end_time": "00:08:10",
+        "text": "So the underlying reality, the underlying object that's being described has nothing to"
+    },
+    {
+        "start_time": "00:08:10",
+        "end_time": "00:08:13",
+        "text": "do with the 251, right?"
+    },
+    {
+        "start_time": "00:08:13",
+        "end_time": "00:08:17",
+        "text": "So that's the whole problem, the raw form of the data has no intrinsic meaning with"
+    },
+    {
+        "start_time": "00:08:17",
+        "end_time": "00:08:19",
+        "text": "the underlying thing."
+    },
+    {
+        "start_time": "00:08:19",
+        "end_time": "00:08:22",
+        "text": "So given that there's no connection between the number and what is describing, how the"
+    },
+    {
+        "start_time": "00:08:22",
+        "end_time": "00:08:25",
+        "text": "heck and any algorithm do anything with it?"
+    },
+    {
+        "start_time": "00:08:25",
+        "end_time": "00:08:28",
+        "text": "It can't."
+    },
+    {
+        "start_time": "00:08:28",
+        "end_time": "00:08:33",
+        "text": "So what you have to do is something called feature engineering or feature extraction,"
+    },
+    {
+        "start_time": "00:08:33",
+        "end_time": "00:08:34",
+        "text": "right?"
+    },
+    {
+        "start_time": "00:08:34",
+        "end_time": "00:08:38",
+        "text": "Where you have to manually take all these things and create essentially a spreadsheet"
+    },
+    {
+        "start_time": "00:08:38",
+        "end_time": "00:08:39",
+        "text": "from them."
+    },
+    {
+        "start_time": "00:08:39",
+        "end_time": "00:08:42",
+        "text": "So basically, let's say that you have a bunch of birds, right?"
+    },
+    {
+        "start_time": "00:08:42",
+        "end_time": "00:08:45",
+        "text": "And you're trying to build a bird classifier to figure out what kind of bird species it"
+    },
+    {
+        "start_time": "00:08:45",
+        "end_time": "00:08:46",
+        "text": "is."
+    },
+    {
+        "start_time": "00:08:46",
+        "end_time": "00:08:50",
+        "text": "So you actually have to take this picture and then you have to measure the beak length,"
+    },
+    {
+        "start_time": "00:08:50",
+        "end_time": "00:08:54",
+        "text": "the wing span, the primary color and so on and so forth."
+    },
+    {
+        "start_time": "00:08:54",
+        "end_time": "00:08:59",
+        "text": "So you're basically structuring the unstructured data manually, right?"
+    },
+    {
+        "start_time": "00:08:59",
+        "end_time": "00:09:06",
+        "text": "And this process of structuring unstructured data is basically called, we use the word"
+    },
+    {
+        "start_time": "00:09:06",
+        "end_time": "00:09:07",
+        "text": "representation."
+    },
+    {
+        "start_time": "00:09:07",
+        "end_time": "00:09:12",
+        "text": "We take the raw data and we represent the data in a different form."
+    },
+    {
+        "start_time": "00:09:12",
+        "end_time": "00:09:17",
+        "text": "And the reason why I'm sort of focusing on the use of the word representation is because"
+    },
+    {
+        "start_time": "00:09:17",
+        "end_time": "00:09:21",
+        "text": "it becomes really, really important to bitrate a lot when we get to deep learning, okay?"
+    },
+    {
+        "start_time": "00:09:21",
+        "end_time": "00:09:25",
+        "text": "So we have to represent the data in a different way for it to work."
+    },
+    {
+        "start_time": "00:09:25",
+        "end_time": "00:09:27",
+        "text": "That's the basic idea, all right?"
+    },
+    {
+        "start_time": "00:09:27",
+        "end_time": "00:09:33",
+        "text": "So what that means is that historically researchers would manually develop these representations"
+    },
+    {
+        "start_time": "00:09:33",
+        "end_time": "00:09:37",
+        "text": "and once you develop them, once you're representations, you can just use traditional"
+    },
+    {
+        "start_time": "00:09:37",
+        "end_time": "00:09:40",
+        "text": "linear regression or lits regression to get the job done."
+    },
+    {
+        "start_time": "00:09:40",
+        "end_time": "00:09:42",
+        "text": "So the whole name of the game is representations."
+    },
+    {
+        "start_time": "00:09:42",
+        "end_time": "00:09:47",
+        "text": "So in fact, people doing PhDs, for example, in computer vision, would spend like four"
+    },
+    {
+        "start_time": "00:09:47",
+        "end_time": "00:09:52",
+        "text": "years developing amazing representations for solving one particular little problem, right?"
+    },
+    {
+        "start_time": "00:09:52",
+        "end_time": "00:09:56",
+        "text": "We have a bunch of, say, cat scans and we need to take the cat scan and figure out whether"
+    },
+    {
+        "start_time": "00:09:56",
+        "end_time": "00:10:00",
+        "text": "a particular kind of stroke that is evident for it in the cat scan, right?"
+    },
+    {
+        "start_time": "00:10:00",
+        "end_time": "00:10:03",
+        "text": "They might actually sit and develop all kinds of representations and test it and so on."
+    },
+    {
+        "start_time": "00:10:03",
+        "end_time": "00:10:06",
+        "text": "And then they'll finally declare victory and say, yay, I'm done with my PhD."
+    },
+    {
+        "start_time": "00:10:06",
+        "end_time": "00:10:10",
+        "text": "Here is this amazing representation and you can build a classifier with it."
+    },
+    {
+        "start_time": "00:10:10",
+        "end_time": "00:10:14",
+        "text": "You predict a particular kind of stroke with high accuracy, okay?"
+    },
+    {
+        "start_time": "00:10:14",
+        "end_time": "00:10:18",
+        "text": "So that was where the world was."
+    },
+    {
+        "start_time": "00:10:18",
+        "end_time": "00:10:23",
+        "text": "Now as you can imagine, developing representations because it's so manual, it's this massive"
+    },
+    {
+        "start_time": "00:10:23",
+        "end_time": "00:10:29",
+        "text": "human bottleneck and this sharply limited the reach and applicability of machine learning,"
+    },
+    {
+        "start_time": "00:10:29",
+        "end_time": "00:10:32",
+        "text": "as you would expect."
+    },
+    {
+        "start_time": "00:10:32",
+        "end_time": "00:10:35",
+        "text": "To address this problem, a different approach came about and that's deep learning."
+    },
+    {
+        "start_time": "00:10:35",
+        "end_time": "00:10:39",
+        "text": "So deep learning sits inside machine learning, okay?"
+    },
+    {
+        "start_time": "00:10:39",
+        "end_time": "00:10:47",
+        "text": "Deep learning can handle unstructured input data without upfront manual processing."
+    },
+    {
+        "start_time": "00:10:47",
+        "end_time": "00:10:52",
+        "text": "Meaning it will automatically learn the right representations from the raw input."
+    },
+    {
+        "start_time": "00:10:52",
+        "end_time": "00:10:57",
+        "text": "Automatically is the keyword, automatically learn representations, which means that you could"
+    },
+    {
+        "start_time": "00:10:57",
+        "end_time": "00:11:00",
+        "text": "give it structured data, you can give it pictures, you can give it text, you can give it anything you want,"
+    },
+    {
+        "start_time": "00:11:00",
+        "end_time": "00:11:01",
+        "text": "you'll just learn it, okay?"
+    },
+    {
+        "start_time": "00:11:03",
+        "end_time": "00:11:08",
+        "text": "It can automatically extract these representations and since it's being automatically"
+    },
+    {
+        "start_time": "00:11:08",
+        "end_time": "00:11:12",
+        "text": "extracted, you can imagine sort of a pipeline where the raw data comes in, you have a bunch"
+    },
+    {
+        "start_time": "00:11:12",
+        "end_time": "00:11:16",
+        "text": "of stuff in the middle that's learning these representations automatically without your help."
+    },
+    {
+        "start_time": "00:11:16",
+        "end_time": "00:11:20",
+        "text": "And then boom, you just attach a little linear regression or a little restriction at the end,"
+    },
+    {
+        "start_time": "00:11:20",
+        "end_time": "00:11:22",
+        "text": "problem solved."
+    },
+    {
+        "start_time": "00:11:22",
+        "end_time": "00:11:25",
+        "text": "That in an actual is deep learning."
+    },
+    {
+        "start_time": "00:11:25",
+        "end_time": "00:11:28",
+        "text": "Input, a whole bunch of representations being learned and then piped into a linear"
+    },
+    {
+        "start_time": "00:11:28",
+        "end_time": "00:11:32",
+        "text": "or a little restriction model, okay?"
+    },
+    {
+        "start_time": "00:11:32",
+        "end_time": "00:11:40",
+        "text": "So the amazing thing is this simple idea, this simple idea is just incredibly powerful, right?"
+    },
+    {
+        "start_time": "00:11:40",
+        "end_time": "00:11:45",
+        "text": "That idea has led to a chat GPT, has led to alpha go, alpha fold and so on and so forth."
+    },
+    {
+        "start_time": "00:11:45",
+        "end_time": "00:11:52",
+        "text": "And I kid you or not, I've been doing deep learning for about 10 years now and"
+    },
+    {
+        "start_time": "00:11:52",
+        "end_time": "00:11:56",
+        "text": "every time I look at it, I literally get goosebumps every so often."
+    },
+    {
+        "start_time": "00:11:56",
+        "end_time": "00:11:59",
+        "text": "That something so simple could be so powerful, right?"
+    },
+    {
+        "start_time": "00:11:59",
+        "end_time": "00:12:01",
+        "text": "It's really like boggles the mind."
+    },
+    {
+        "start_time": "00:12:01",
+        "end_time": "00:12:04",
+        "text": "I'm like, I'm just so lucky to be alive and working during this period."
+    },
+    {
+        "start_time": "00:12:06",
+        "end_time": "00:12:10",
+        "text": "And in a coming from people who have been in the industry a long time, this sort of breathless"
+    },
+    {
+        "start_time": "00:12:10",
+        "end_time": "00:12:13",
+        "text": "exclamation is not very rare, particularly because I'm not in marketing."
+    },
+    {
+        "start_time": "00:12:14",
+        "end_time": "00:12:20",
+        "text": "I actually mean it with all the apologies to various marketing folks."
+    },
+    {
+        "start_time": "00:12:20",
+        "end_time": "00:12:22",
+        "text": "So just realized it's being taped."
+    },
+    {
+        "start_time": "00:12:22",
+        "end_time": "00:12:28",
+        "text": "So, okay, so this demolished the human bottleneck for using machine learning with unstructured data."
+    },
+    {
+        "start_time": "00:12:29",
+        "end_time": "00:12:35",
+        "text": "And so it comes from the confluence of pre-forces, new algorithmic ideas, a lot of data."
+    },
+    {
+        "start_time": "00:12:35",
+        "end_time": "00:12:40",
+        "text": "And that very importantly, the fact that we have access to parallel computing hardware in the form"
+    },
+    {
+        "start_time": "00:12:40",
+        "end_time": "00:12:42",
+        "text": "of these things called GPUs, graphics processing units."
+    },
+    {
+        "start_time": "00:12:42",
+        "end_time": "00:12:47",
+        "text": "And these three forces came together and they were applied to an old idea called neural networks"
+    },
+    {
+        "start_time": "00:12:47",
+        "end_time": "00:12:49",
+        "text": "and that's basically deep learning."
+    },
+    {
+        "start_time": "00:12:49",
+        "end_time": "00:12:52",
+        "text": "And I'll go through it very quickly because obviously we're going to spend half the semester"
+    },
+    {
+        "start_time": "00:12:52",
+        "end_time": "00:12:53",
+        "text": "looking into this thing in detail."
+    },
+    {
+        "start_time": "00:12:54",
+        "end_time": "00:13:00",
+        "text": "So, what's the immediate, immediate application of the ability to automatically handle unstructured data?"
+    },
+    {
+        "start_time": "00:13:01",
+        "end_time": "00:13:03",
+        "text": "What is like the no-brainer application?"
+    },
+    {
+        "start_time": "00:13:10",
+        "end_time": "00:13:12",
+        "text": "It's okay if it's obvious, tell me."
+    },
+    {
+        "start_time": "00:13:14",
+        "end_time": "00:13:14",
+        "text": "Sorry."
+    },
+    {
+        "start_time": "00:13:18",
+        "end_time": "00:13:22",
+        "text": "Right, so image classification, yes, so you can take an image, a good example of unstructured data."
+    },
+    {
+        "start_time": "00:13:22",
+        "end_time": "00:13:23",
+        "text": "You can do some classification on it."
+    },
+    {
+        "start_time": "00:13:23",
+        "end_time": "00:13:30",
+        "text": "But more generally, more generally, what I'm getting at is that every sensor in the world"
+    },
+    {
+        "start_time": "00:13:31",
+        "end_time": "00:13:36",
+        "text": "can be given the ability to detect, recognize and classify what it's sensing, every sensor."
+    },
+    {
+        "start_time": "00:13:36",
+        "end_time": "00:13:38",
+        "text": "Because remember, what does a sensor do?"
+    },
+    {
+        "start_time": "00:13:39",
+        "end_time": "00:13:42",
+        "text": "A sensor is just a receptacle for unstructured data."
+    },
+    {
+        "start_time": "00:13:43",
+        "end_time": "00:13:47",
+        "text": "A camera is a receptacle for unstructured video or unstructured, you know, still images."
+    },
+    {
+        "start_time": "00:13:48",
+        "end_time": "00:13:50",
+        "text": "Microphone unstructured audio, right?"
+    },
+    {
+        "start_time": "00:13:50",
+        "end_time": "00:13:56",
+        "text": "So every sensor, you can imagine taking a sensor and sticking a little deep learning system behind it."
+    },
+    {
+        "start_time": "00:13:56",
+        "end_time": "00:14:00",
+        "text": "And now suddenly, what comes out of this center of the deep learning system,"
+    },
+    {
+        "start_time": "00:14:00",
+        "end_time": "00:14:03",
+        "text": "you can count, you can classify, you can detect, you can do all kinds of stuff."
+    },
+    {
+        "start_time": "00:14:04",
+        "end_time": "00:14:08",
+        "text": "In short, you can analyze and you can predict, right?"
+    },
+    {
+        "start_time": "00:14:08",
+        "end_time": "00:14:14",
+        "text": "And this is the way I'm describing it right now, you'll be like, yeah, duh, obviously."
+    },
+    {
+        "start_time": "00:14:15",
+        "end_time": "00:14:16",
+        "text": "But you know what?"
+    },
+    {
+        "start_time": "00:14:16",
+        "end_time": "00:14:18",
+        "text": "This obviously thing is actually not at all obvious."
+    },
+    {
+        "start_time": "00:14:19",
+        "end_time": "00:14:23",
+        "text": "In terms of whether it'll help you find interesting applications or not."
+    },
+    {
+        "start_time": "00:14:24",
+        "end_time": "00:14:28",
+        "text": "So here's something I literally saw last week."
+    },
+    {
+        "start_time": "00:14:30",
+        "end_time": "00:14:32",
+        "text": "Actually, I have another slide before that, but we're coming to that."
+    },
+    {
+        "start_time": "00:14:32",
+        "end_time": "00:14:38",
+        "text": "So, for instance, every time you use Face ID and lock your phone, this is the basic principle at work,"
+    },
+    {
+        "start_time": "00:14:38",
+        "end_time": "00:14:42",
+        "text": "right? The camera and the iPhone is the sensor and they stuck a deep learning system behind it"
+    },
+    {
+        "start_time": "00:14:42",
+        "end_time": "00:14:46",
+        "text": "to do image classification, right? Drama, non-roma, right? That's what it's, uh, classifying."
+    },
+    {
+        "start_time": "00:14:47",
+        "end_time": "00:14:52",
+        "text": "And so here, right, you have a breast cancer, it's a breast cancer detection system from a mammogram."
+    },
+    {
+        "start_time": "00:14:53",
+        "end_time": "00:14:56",
+        "text": "By the way, this picture is a very interesting picture."
+    },
+    {
+        "start_time": "00:14:56",
+        "end_time": "00:15:03",
+        "text": "So, there's a professor in WCS, Regina Barzilai, who's a very well-known expert in this field."
+    },
+    {
+        "start_time": "00:15:03",
+        "end_time": "00:15:08",
+        "text": "And she actually has built a breast cancer detection system, which has been deplotted"
+    },
+    {
+        "start_time": "00:15:08",
+        "end_time": "00:15:12",
+        "text": "mass-general hospital. And it turns out she's actually a breast cancer survivor."
+    },
+    {
+        "start_time": "00:15:13",
+        "end_time": "00:15:22",
+        "text": "And she was, she's good now, all good. But when, after she built her system, I heard that she actually"
+    },
+    {
+        "start_time": "00:15:22",
+        "end_time": "00:15:29",
+        "text": "ran that system against the mammograms from many years prior when she went for a mammogram and"
+    },
+    {
+        "start_time": "00:15:29",
+        "end_time": "00:15:34",
+        "text": "was told that everything is fine. She ran the system on that mammogram and it came back,"
+    },
+    {
+        "start_time": "00:15:34",
+        "end_time": "00:15:39",
+        "text": "that's it, here's the problem. So, a very interesting example where a deep learning system"
+    },
+    {
+        "start_time": "00:15:39",
+        "end_time": "00:15:44",
+        "text": "picked up something that a radiologist could not, right? So, these things can be quite powerful."
+    },
+    {
+        "start_time": "00:15:45",
+        "end_time": "00:15:49",
+        "text": "Obviously, any self-driving system has numerous deep learning,"
+    },
+    {
+        "start_time": "00:15:49",
+        "end_time": "00:15:52",
+        "text": "algorithms running out of the hood, you know, pedestrian detection,"
+    },
+    {
+        "start_time": "00:15:52",
+        "end_time": "00:15:55",
+        "text": "you know, stoplight detection, zebra crossing detection, so on and so forth."
+    },
+    {
+        "start_time": "00:15:57",
+        "end_time": "00:16:00",
+        "text": "You know, it's being very heavily used in visual inspection manufacturing."
+    },
+    {
+        "start_time": "00:16:00",
+        "end_time": "00:16:04",
+        "text": "You have various cameras, now, instead of people looking at saying, okay, there's a dent or"
+    },
+    {
+        "start_time": "00:16:04",
+        "end_time": "00:16:08",
+        "text": "there's a scratch, they have a little system, which is a dent detector, scratch detector and so on."
+    },
+    {
+        "start_time": "00:16:08",
+        "end_time": "00:16:12",
+        "text": "That's going on right now. And now, I come to the example I saw last week, which is,"
+    },
+    {
+        "start_time": "00:16:13",
+        "end_time": "00:16:18",
+        "text": "so this is an example of, you can create dramatically better products. If you really internalize this"
+    },
+    {
+        "start_time": "00:16:18",
+        "end_time": "00:16:23",
+        "text": "idea of, okay, it's almost like you're looking at the world and saying, oh, there's a sensor,"
+    },
+    {
+        "start_time": "00:16:23",
+        "end_time": "00:16:26",
+        "text": "can you attach a deal, think behind it? That's the way you should be looking at the world, okay,"
+    },
+    {
+        "start_time": "00:16:26",
+        "end_time": "00:16:32",
+        "text": "for startup ideas. So, here's an example, okay, these apparently are the world's first smart binoculars."
+    },
+    {
+        "start_time": "00:16:34",
+        "end_time": "00:16:41",
+        "text": "Okay, this is the binocular two weeks ago, where you look at the bird, you look at the bird,"
+    },
+    {
+        "start_time": "00:16:42",
+        "end_time": "00:16:44",
+        "text": "and now, it tells you what kind of bird it is, right there."
+    },
+    {
+        "start_time": "00:16:47",
+        "end_time": "00:16:53",
+        "text": "It's a simple idea, but imagine, right? Imagine you are the first out of the gate with this feature,"
+    },
+    {
+        "start_time": "00:16:53",
+        "end_time": "00:16:55",
+        "text": "you will have a little bit of an edge till everybody catches up like three months later."
+    },
+    {
+        "start_time": "00:16:57",
+        "end_time": "00:17:02",
+        "text": "Let's be very clear, there are no long-term monopoly windows in the world, there are only short-term"
+    },
+    {
+        "start_time": "00:17:02",
+        "end_time": "00:17:08",
+        "text": "windows, so the hunt is always on for a little monopoly window. So, here's an example of that,"
+    },
+    {
+        "start_time": "00:17:09",
+        "end_time": "00:17:14",
+        "text": "so I encourage you to always think about the world as, you know, where are the sensors here,"
+    },
+    {
+        "start_time": "00:17:15",
+        "end_time": "00:17:19",
+        "text": "and can I attach something behind the sensor to do something useful with it, okay? All right."
+    },
+    {
+        "start_time": "00:17:24",
+        "end_time": "00:17:28",
+        "text": "Now, let's turn on the attention to the output. We have been talking about"
+    },
+    {
+        "start_time": "00:17:28",
+        "end_time": "00:17:33",
+        "text": "infrastructure data and structure data, and how deep learning has sort of unlocked the ability"
+    },
+    {
+        "start_time": "00:17:33",
+        "end_time": "00:17:37",
+        "text": "to work with unstructured data, but you have sort of been neglecting the output side of the equation."
+    },
+    {
+        "start_time": "00:17:37",
+        "end_time": "00:17:42",
+        "text": "So, traditionally, we could predict single numbers or a few numbers pretty easily, right? So,"
+    },
+    {
+        "start_time": "00:17:43",
+        "end_time": "00:17:48",
+        "text": "you've all done the canonical, you know, should this person be given a loan application in machine"
+    },
+    {
+        "start_time": "00:17:48",
+        "end_time": "00:17:52",
+        "text": "learning, right? So, you just predict the probability that a bottle will repay a loan,"
+    },
+    {
+        "start_time": "00:17:52",
+        "end_time": "00:17:57",
+        "text": "or based on a whole bunch of data, or supply chain, you predict the demand for the product next week,"
+    },
+    {
+        "start_time": "00:17:57",
+        "end_time": "00:18:01",
+        "text": "or you can predict a bunch of numbers. So, given a picture, you can say, okay,"
+    },
+    {
+        "start_time": "00:18:01",
+        "end_time": "00:18:06",
+        "text": "which one of the 10 kinds of furniture is it, right? You can predict 10 numbers, 10 probabilities that"
+    },
+    {
+        "start_time": "00:18:06",
+        "end_time": "00:18:10",
+        "text": "add up to 1, you can predict a whole bunch of numbers that don't have to add up to 1, such as the"
+    },
+    {
+        "start_time": "00:18:10",
+        "end_time": "00:18:16",
+        "text": "GPS coordinates of an Uber, right? So, these are all simple structure, sorry, simple structure"
+    },
+    {
+        "start_time": "00:18:16",
+        "end_time": "00:18:21",
+        "text": "output, just a few numbers, right? What we could not do very easily was to actually generate pictures"
+    },
+    {
+        "start_time": "00:18:21",
+        "end_time": "00:18:27",
+        "text": "like this. We could not generate unstructured data, we could only consume unstructured data,"
+    },
+    {
+        "start_time": "00:18:27",
+        "end_time": "00:18:32",
+        "text": "right? You could generate text, you could generate pictures, and so on, audio, and so on and so forth."
+    },
+    {
+        "start_time": "00:18:32",
+        "end_time": "00:18:38",
+        "text": "So, with generative AI, that problem's gone. So, generative AI is the ability to actually"
+    },
+    {
+        "start_time": "00:18:38",
+        "end_time": "00:18:43",
+        "text": "create unstructured data, right? And therefore, it sits within deep learning, it still runs on deep"
+    },
+    {
+        "start_time": "00:18:43",
+        "end_time": "00:18:49",
+        "text": "learning, but it's just one kind of deep learning, okay? There's plenty of stuff going on in deep"
+    },
+    {
+        "start_time": "00:18:49",
+        "end_time": "00:18:53",
+        "text": "learning, it's got nothing to do with generative AI. Nowadays, of course, you know, if you are a"
+    },
+    {
+        "start_time": "00:18:53",
+        "end_time": "00:18:58",
+        "text": "self-respecting entrepreneur who wants to write this craze, you'll probably declare what are we"
+    },
+    {
+        "start_time": "00:18:58",
+        "end_time": "00:19:03",
+        "text": "doing as generative AI, right? And some BCs may actually be ready to fund you, who knows?"
+    },
+    {
+        "start_time": "00:19:04",
+        "end_time": "00:19:07",
+        "text": "But the point is, there's plenty of stuff going on in deep learning, there's got nothing to do with"
+    },
+    {
+        "start_time": "00:19:07",
+        "end_time": "00:19:13",
+        "text": "generative AI, but this is the overall picture. Now, here we can produce unstructured outputs,"
+    },
+    {
+        "start_time": "00:19:13",
+        "end_time": "00:19:18",
+        "text": "like pictures, you can take this thing, and then you can actually, you know, come up with a nice"
+    },
+    {
+        "start_time": "00:19:18",
+        "end_time": "00:19:22",
+        "text": "picture, a description of it. This actually is a very famous picture, by the way, in the world of"
+    },
+    {
+        "start_time": "00:19:22",
+        "end_time": "00:19:25",
+        "text": "computer vision. So, we are actually going to be analyzing this picture a little later on,"
+    },
+    {
+        "start_time": "00:19:26",
+        "end_time": "00:19:31",
+        "text": "in the semester. You can obviously go from a very complicated caption to an image,"
+    },
+    {
+        "start_time": "00:19:31",
+        "end_time": "00:19:40",
+        "text": "you can go from text to music, can people hear it? Okay, yeah, all right. So, and of course,"
+    },
+    {
+        "start_time": "00:19:40",
+        "end_time": "00:19:45",
+        "text": "we can go from text to text, i.e. chat GPT. And then, as of a few months ago, things have got"
+    },
+    {
+        "start_time": "00:19:45",
+        "end_time": "00:19:50",
+        "text": "even more interesting, but you can actually go, you can send text and an image in, and you can get"
+    },
+    {
+        "start_time": "00:19:50",
+        "end_time": "00:19:55",
+        "text": "text out, right? And in fact, as of a few weeks ago, you can send text image, text image, text"
+    },
+    {
+        "start_time": "00:19:55",
+        "end_time": "00:20:01",
+        "text": "image in an arbitrary sequence into the system, and you can actually come back to you with text and"
+    },
+    {
+        "start_time": "00:20:01",
+        "end_time": "00:20:06",
+        "text": "image, right? So, things are becoming multi-model, and I just want to share with you, like a really"
+    },
+    {
+        "start_time": "00:20:06",
+        "end_time": "00:20:12",
+        "text": "fun example I saw recently. So, this person sends this picture. Can folks see this?"
+    },
+    {
+        "start_time": "00:20:13",
+        "end_time": "00:20:19",
+        "text": "This is very complicated parking sign. Apparently, in San Francisco, and they're like, it's"
+    },
+    {
+        "start_time": "00:20:19",
+        "end_time": "00:20:24",
+        "text": "Wednesday at 4PM, can I park here? Tell me in one line, because you really didn't want GPT-4"
+    },
+    {
+        "start_time": "00:20:24",
+        "end_time": "00:20:30",
+        "text": "to be giving you a big essay about this. You literally want to park. So, GPT-4 comes back and says,"
+    },
+    {
+        "start_time": "00:20:31",
+        "end_time": "00:20:36",
+        "text": "yes, you can park here for up to 1 hour starting at 4PM. And folks, I double-check this thing,"
+    },
+    {
+        "start_time": "00:20:36",
+        "end_time": "00:20:41",
+        "text": "it's correct. We all know these things hallucinate, right? Can you imagine getting a parking ticket"
+    },
+    {
+        "start_time": "00:20:41",
+        "end_time": "00:20:46",
+        "text": "and telling the judge, I'm sorry, I didn't realize it was hallucinating. So, you have to double-check it."
+    },
+    {
+        "start_time": "00:20:46",
+        "end_time": "00:20:52",
+        "text": "So, yeah, so things are getting multi-model very quickly. And so, the picture here is that, within"
+    },
+    {
+        "start_time": "00:20:52",
+        "end_time": "00:20:56",
+        "text": "GNAI, we used to have these separate circles, text to text, text to image, text to music, text to"
+    },
+    {
+        "start_time": "00:20:56",
+        "end_time": "00:21:01",
+        "text": "this, text to that, so on and so forth. Those are all beginning to merge now inside GNAI, because"
+    },
+    {
+        "start_time": "00:21:01",
+        "end_time": "00:21:05",
+        "text": "multi-model models are going to become the norm this year, right? We already have really good"
+    },
+    {
+        "start_time": "00:21:05",
+        "end_time": "00:21:10",
+        "text": "closed models. We actually already have very good open source multi-model models. And so,"
+    },
+    {
+        "start_time": "00:21:10",
+        "end_time": "00:21:17",
+        "text": "my feeling is that by the end of the year, the idea of using a text-only model is going to be"
+    },
+    {
+        "start_time": "00:21:17",
+        "end_time": "00:21:21",
+        "text": "like, really, you do that still, right? It's going to become like a quaint old-fashioned thing."
+    },
+    {
+        "start_time": "00:21:21",
+        "end_time": "00:21:25",
+        "text": "I think multi-model modality is going to become the norm. So, that's where the world is, and this is"
+    },
+    {
+        "start_time": "00:21:25",
+        "end_time": "00:21:30",
+        "text": "the landscape. So, any questions on the landscape before we actually start doing some math?"
+    },
+    {
+        "start_time": "00:21:35",
+        "end_time": "00:21:37",
+        "text": "Okay. Yeah."
+    },
+    {
+        "start_time": "00:21:55",
+        "end_time": "00:22:20",
+        "text": "So, I think the question is that, in general, how do you train your model so that it gives you"
+    },
+    {
+        "start_time": "00:22:20",
+        "end_time": "00:22:24",
+        "text": "your right answers, given that over the passage of time, the amount of evidence in this data could"
+    },
+    {
+        "start_time": "00:22:24",
+        "end_time": "00:22:29",
+        "text": "be very highly variable? So, in this particular case of the professor I talked about,"
+    },
+    {
+        "start_time": "00:22:31",
+        "end_time": "00:22:35",
+        "text": "everything at that point was going through an expert radiologist. So, five years ago, this"
+    },
+    {
+        "start_time": "00:22:35",
+        "end_time": "00:22:40",
+        "text": "mammogram was seen by a radiologist, and that person concluded there is no problem. So,"
+    },
+    {
+        "start_time": "00:22:40",
+        "end_time": "00:22:45",
+        "text": "that was the training label, right? The wrong training label. So, typically, what happens is that"
+    },
+    {
+        "start_time": "00:22:45",
+        "end_time": "00:22:49",
+        "text": "training labels could be wrong, some small fraction of the time. So, you need to have systems"
+    },
+    {
+        "start_time": "00:22:49",
+        "end_time": "00:22:54",
+        "text": "that are robust. So, your data needs to be complete, it needs to be comprehensive, it needs to be"
+    },
+    {
+        "start_time": "00:22:54",
+        "end_time": "00:22:59",
+        "text": "have correct labels. If these ideas are not met, your systems are not going to be that good,"
+    },
+    {
+        "start_time": "00:22:59",
+        "end_time": "00:23:04",
+        "text": "but as it turns out, with neural networks, even with some amount of noise in the labels,"
+    },
+    {
+        "start_time": "00:23:04",
+        "end_time": "00:23:07",
+        "text": "they still do a pretty good job, right? So, that's sort of the general idea."
+    },
+    {
+        "start_time": "00:23:11",
+        "end_time": "00:23:16",
+        "text": "The verification comes from the human. So, every, remember when we look at radiology data,"
+    },
+    {
+        "start_time": "00:23:17",
+        "end_time": "00:23:23",
+        "text": "the data we are working with is the input is, let's say an image, like a radiogram or something,"
+    },
+    {
+        "start_time": "00:23:23",
+        "end_time": "00:23:28",
+        "text": "and then a human radiologist or a set of radiologists, I have said this has a problem or does not"
+    },
+    {
+        "start_time": "00:23:28",
+        "end_time": "00:23:34",
+        "text": "have a problem. So, that is called the ground truth. So, it is this ground truth image and label,"
+    },
+    {
+        "start_time": "00:23:34",
+        "end_time": "00:23:39",
+        "text": "this combination, this being used to train these models. Yeah."
+    },
+    {
+        "start_time": "00:23:40",
+        "end_time": "00:23:48",
+        "text": "Boing is a problem, right? So, we are going to cover embodiment. So, the embodiment here refers to"
+    },
+    {
+        "start_time": "00:23:48",
+        "end_time": "00:23:54",
+        "text": "the fact that if you have robot robots, right, they need to actually operate in the real world."
+    },
+    {
+        "start_time": "00:23:54",
+        "end_time": "00:23:59",
+        "text": "And so, robots are an example of what is called embodied intelligence. So, unfortunately,"
+    },
+    {
+        "start_time": "00:23:59",
+        "end_time": "00:24:03",
+        "text": "due to the constraints of time, we are not going to get it to robotics at all. But I will say that"
+    },
+    {
+        "start_time": "00:24:03",
+        "end_time": "00:24:06",
+        "text": "a lot of the deep learning stuff you are going to talk about, those are all fundamental building"
+    },
+    {
+        "start_time": "00:24:06",
+        "end_time": "00:24:16",
+        "text": "blocks in modern robotic systems. So, in summary, x and y can be anything and it can be multi-model."
+    },
+    {
+        "start_time": "00:24:17",
+        "end_time": "00:24:23",
+        "text": "I literally could not have put up the slide maybe two years ago. So, it is very simple in how it"
+    },
+    {
+        "start_time": "00:24:23",
+        "end_time": "00:24:28",
+        "text": "looks, but it is very profound. You can learn a mapping from anything to anything at this point,"
+    },
+    {
+        "start_time": "00:24:28",
+        "end_time": "00:24:35",
+        "text": "very easily as long as you have an update. So, now note that all this excitement that we see around"
+    },
+    {
+        "start_time": "00:24:35",
+        "end_time": "00:24:44",
+        "text": "us is everything stems from deep learning. Everything depends on deep learning. And so, if you understand"
+    },
+    {
+        "start_time": "00:24:44",
+        "end_time": "00:24:48",
+        "text": "deep learning, a lot of interesting things become possible. So, let us get going. So, we will start"
+    },
+    {
+        "start_time": "00:24:48",
+        "end_time": "00:24:55",
+        "text": "with a very basics. What is a neural network? Now, recall logistic regression from back in the day."
+    },
+    {
+        "start_time": "00:24:55",
+        "end_time": "00:25:00",
+        "text": "So, what is logistic regression? You send in a bunch of numbers, a vector of numbers,"
+    },
+    {
+        "start_time": "00:25:00",
+        "end_time": "00:25:04",
+        "text": "and you usually get a probability out, between 0 and 1. What is the probability of something"
+    },
+    {
+        "start_time": "00:25:04",
+        "end_time": "00:25:11",
+        "text": "or the other? And so, this logistic regression model is also represented in this form, if you"
+    },
+    {
+        "start_time": "00:25:11",
+        "end_time": "00:25:16",
+        "text": "will recall. So, basically what we do is we take all these numbers, we run it through a linear"
+    },
+    {
+        "start_time": "00:25:16",
+        "end_time": "00:25:21",
+        "text": "function, we run it through a linear function, you get a number, and then we take that thing and"
+    },
+    {
+        "start_time": "00:25:21",
+        "end_time": "00:25:26",
+        "text": "run it through one divided by one plus e raised to minus that. And that is guaranteed to give you"
+    },
+    {
+        "start_time": "00:25:26",
+        "end_time": "00:25:30",
+        "text": "a number between 0 and 1, which can be interpreted as a probability, and that is logistic regression."
+    },
+    {
+        "start_time": "00:25:31",
+        "end_time": "00:25:36",
+        "text": "And the canonical, you know, loan approvals, things like that all fall into this sort of"
+    },
+    {
+        "start_time": "00:25:36",
+        "end_time": "00:25:46",
+        "text": "convenient bucket. So, this should be super familiar. All right. Now, we are going to actually look"
+    },
+    {
+        "start_time": "00:25:46",
+        "end_time": "00:25:54",
+        "text": "at this, you know, simple modest humble little operation, using the lens of a network of mathematical"
+    },
+    {
+        "start_time": "00:25:54",
+        "end_time": "00:25:59",
+        "text": "operations, and the reason why we do it will become clear a bit later. So, we will take this very"
+    },
+    {
+        "start_time": "00:25:59",
+        "end_time": "00:26:05",
+        "text": "simple example, where we have, let us say, two variables, GPA and experience, right. This is the"
+    },
+    {
+        "start_time": "00:26:05",
+        "end_time": "00:26:11",
+        "text": "GPA of some graduates, number of years of work experience, and then this is the dependent variable,"
+    },
+    {
+        "start_time": "00:26:11",
+        "end_time": "00:26:16",
+        "text": "which is either 0 or 1, and 0 if they do not get called for an interview, 1 if they get called for"
+    },
+    {
+        "start_time": "00:26:16",
+        "end_time": "00:26:22",
+        "text": "an interview. It is a two input variable, one output variable problem, and it is a classification"
+    },
+    {
+        "start_time": "00:26:22",
+        "end_time": "00:26:26",
+        "text": "problem, because we are classifying people into, will they get called for an interview, yes or no."
+    },
+    {
+        "start_time": "00:26:29",
+        "end_time": "00:26:36",
+        "text": "And so, that is a setup for this problem, and let us say that we actually run it through,"
+    },
+    {
+        "start_time": "00:26:37",
+        "end_time": "00:26:42",
+        "text": "we actually try to fit a logistic regression model to it. So, if you are familiar with R, for"
+    },
+    {
+        "start_time": "00:26:42",
+        "end_time": "00:26:47",
+        "text": "example, you would use something like GLM to fit this model. If you use something like stats"
+    },
+    {
+        "start_time": "00:26:47",
+        "end_time": "00:26:52",
+        "text": "models in Python, there is a similar function for it, scikit-learn, there is another function for it,"
+    },
+    {
+        "start_time": "00:26:52",
+        "end_time": "00:26:58",
+        "text": "you get the idea, right. You can use whatever favorite methods you have for logistic regression"
+    },
+    {
+        "start_time": "00:26:58",
+        "end_time": "00:27:02",
+        "text": "modeling to get this job done. And if you do that with this little data set, you are going to get"
+    },
+    {
+        "start_time": "00:27:02",
+        "end_time": "00:27:07",
+        "text": "these coefficients, right. The point 4 is the intercept, point 2 is the coefficient of a GPA,"
+    },
+    {
+        "start_time": "00:27:07",
+        "end_time": "00:27:14",
+        "text": "0.5 for experience, and that is a resulting sigmoid function, okay. All right, cool. So, now let us"
+    },
+    {
+        "start_time": "00:27:14",
+        "end_time": "00:27:19",
+        "text": "actually rewrite this formula as a network in the following way. So, first, what we will do is,"
+    },
+    {
+        "start_time": "00:27:19",
+        "end_time": "00:27:24",
+        "text": "we will take GPN experience and stick it here on the left side, and we will put little circles"
+    },
+    {
+        "start_time": "00:27:24",
+        "end_time": "00:27:29",
+        "text": "next to them, and we will call them the input nodes, okay. And so, imagine that somebody puts,"
+    },
+    {
+        "start_time": "00:27:29",
+        "end_time": "00:27:35",
+        "text": "writes a GPA into the circle, 3.5, or you know, here is experience 2.0, and then it flows through this"
+    },
+    {
+        "start_time": "00:27:35",
+        "end_time": "00:27:40",
+        "text": "arrow, and as it flows through, it gets multiplied by its coefficient, point 2, the point 2 is coming"
+    },
+    {
+        "start_time": "00:27:40",
+        "end_time": "00:27:47",
+        "text": "from here. Similarly, experience gets multiplied by 0.5, it comes in here, and this node, as the"
+    },
+    {
+        "start_time": "00:27:47",
+        "end_time": "00:27:52",
+        "text": "plus indicates, is adding everything that is coming into it. So, it is adding 0.2 times GPA, 0.5 times"
+    },
+    {
+        "start_time": "00:27:52",
+        "end_time": "00:27:57",
+        "text": "experience, plus the interceptor is green arrow coming from on its own, it comes through here,"
+    },
+    {
+        "start_time": "00:27:57",
+        "end_time": "00:28:03",
+        "text": "and what comes out of this is just a single number, and that number goes into this little circle,"
+    },
+    {
+        "start_time": "00:28:04",
+        "end_time": "00:28:14",
+        "text": "and then out pops a probability, okay. So, I have sort of done this ridiculously long winded way"
+    },
+    {
+        "start_time": "00:28:14",
+        "end_time": "00:28:18",
+        "text": "of writing a simple function, okay, and the reason why I am doing it will become clear in a second."
+    },
+    {
+        "start_time": "00:28:19",
+        "end_time": "00:28:26",
+        "text": "Okay, so this is a little network of operations for the simple function, and so for instance,"
+    },
+    {
+        "start_time": "00:28:26",
+        "end_time": "00:28:31",
+        "text": "how you would use it is you to make a prediction, you will let us say someone has a 3.8 GPA,"
+    },
+    {
+        "start_time": "00:28:31",
+        "end_time": "00:28:37",
+        "text": "and 1.2 years of experience, you just plug it in here, do the math, you get 0.76, same thing here,"
+    },
+    {
+        "start_time": "00:28:37",
+        "end_time": "00:28:42",
+        "text": "comes in here, add them all up, you get 1.76, you run 1.76 through the sigmoid, you get 0.85,"
+    },
+    {
+        "start_time": "00:28:42",
+        "end_time": "00:28:47",
+        "text": "and that is the probability that that particular individual may get called for an interview, okay."
+    },
+    {
+        "start_time": "00:28:47",
+        "end_time": "00:28:49",
+        "text": "At this point, we are just doing logic regression, nothing more complicated."
+    },
+    {
+        "start_time": "00:28:51",
+        "end_time": "00:28:57",
+        "text": "Okay, so now if you have many variables, not two variables, like x1 through xk,"
+    },
+    {
+        "start_time": "00:28:57",
+        "end_time": "00:29:01",
+        "text": "you get the same sort of logic applies, each one has some coefficient, and then there is an intercept,"
+    },
+    {
+        "start_time": "00:29:01",
+        "end_time": "00:29:06",
+        "text": "they all get added up here, run through a sigmoid, and out pops this number, okay. Notice how the"
+    },
+    {
+        "start_time": "00:29:06",
+        "end_time": "00:29:15",
+        "text": "data flows from left to right, okay. All right, any questions on this? All right, good."
+    },
+    {
+        "start_time": "00:29:16",
+        "end_time": "00:29:21",
+        "text": "So now terminology, so you will actually you will discover that the world of neural networks and"
+    },
+    {
+        "start_time": "00:29:21",
+        "end_time": "00:29:26",
+        "text": "deep learning has its own terminology, they have their own ways of referring to things that the"
+    },
+    {
+        "start_time": "00:29:26",
+        "end_time": "00:29:30",
+        "text": "rest of the world has been referring using something else for the longest time, right. It's kind of"
+    },
+    {
+        "start_time": "00:29:30",
+        "end_time": "00:29:37",
+        "text": "annoying sometimes, but it's a way it is. So, remember in regression, we used to call those numbers"
+    },
+    {
+        "start_time": "00:29:37",
+        "end_time": "00:29:42",
+        "text": "next to each variable as coefficients, and the constant thing as an intercept. Well, guess what?"
+    },
+    {
+        "start_time": "00:29:42",
+        "end_time": "00:29:47",
+        "text": "In this world, these multiple those coefficients are actually called weights, and the"
+    },
+    {
+        "start_time": "00:29:47",
+        "end_time": "00:29:52",
+        "text": "intercept are called biases. So, in the neural network, well, these are called weights and biases,"
+    },
+    {
+        "start_time": "00:29:52",
+        "end_time": "00:29:56",
+        "text": "and sometimes if you are a little lazy, you may just call the whole thing as weights, okay."
+    },
+    {
+        "start_time": "00:29:56",
+        "end_time": "00:30:01",
+        "text": "So, when you see in the newspaper that, you know, oh my god, this amazing modest weights have been"
+    },
+    {
+        "start_time": "00:30:01",
+        "end_time": "00:30:07",
+        "text": "leaked on the internet, or on Bittorr and something, that's what's going on, right. All these"
+    },
+    {
+        "start_time": "00:30:07",
+        "end_time": "00:30:11",
+        "text": "coefficients have been leaked, because once you know what the coefficients are, and what the"
+    },
+    {
+        "start_time": "00:30:11",
+        "end_time": "00:30:16",
+        "text": "architecture is, you can just reconstruct the model. All right, so that's what's going on here."
+    },
+    {
+        "start_time": "00:30:17",
+        "end_time": "00:30:21",
+        "text": "Now, why did we do this network business? Why did we write it as a network?"
+    },
+    {
+        "start_time": "00:30:23",
+        "end_time": "00:30:24",
+        "text": "Yeah, what is advantage? Any guesses?"
+    },
+    {
+        "start_time": "00:30:33",
+        "end_time": "00:30:40",
+        "text": "When you have both coefficients for the network, so it's just easier to see it that way."
+    },
+    {
+        "start_time": "00:30:40",
+        "end_time": "00:30:44",
+        "text": "Right, if you have lots of things going on, it's easier to see it if you actually write it in"
+    },
+    {
+        "start_time": "00:30:44",
+        "end_time": "00:30:50",
+        "text": "graphical form. Yes, correct. But, so is it only like a usability advantage?"
+    },
+    {
+        "start_time": "00:30:52",
+        "end_time": "00:30:55",
+        "text": "The thing is you want different functions for different layers of the..."
+    },
+    {
+        "start_time": "00:30:56",
+        "end_time": "00:31:01",
+        "text": "Okay, so maybe we want to use different functions and different layers, but I think there's actually"
+    },
+    {
+        "start_time": "00:31:01",
+        "end_time": "00:31:07",
+        "text": "even a larger sort of a more basic point, which is that then when you, the moment you write it down,"
+    },
+    {
+        "start_time": "00:31:07",
+        "end_time": "00:31:10",
+        "text": "you suddenly realize that I could have lots of things in the middle."
+    },
+    {
+        "start_time": "00:31:12",
+        "end_time": "00:31:16",
+        "text": "I don't have to go from the input to the output directly. I could do lots of things in the middle,"
+    },
+    {
+        "start_time": "00:31:16",
+        "end_time": "00:31:22",
+        "text": "right. That's some of the key idea. So, what you do is, so remember the notion of learning"
+    },
+    {
+        "start_time": "00:31:22",
+        "end_time": "00:31:25",
+        "text": "representations of unstructured data, right. Where you take a picture and say,"
+    },
+    {
+        "start_time": "00:31:25",
+        "end_time": "00:31:30",
+        "text": "beek length and things like that, right. And remember, I said deep learning actually automatically"
+    },
+    {
+        "start_time": "00:31:30",
+        "end_time": "00:31:36",
+        "text": "learns these things. There is that automatic learning coming from. Well, this is where it's coming"
+    },
+    {
+        "start_time": "00:31:36",
+        "end_time": "00:31:40",
+        "text": "from. So, what we do is, we take this thing, right. There's just a logic regression model,"
+    },
+    {
+        "start_time": "00:31:40",
+        "end_time": "00:31:47",
+        "text": "inputs get multiple added up as a linear function, run through a sigmoid. And then we are like,"
+    },
+    {
+        "start_time": "00:31:47",
+        "end_time": "00:31:52",
+        "text": "hmm, if we want to learn representations of the raw input, we better be doing something in the"
+    },
+    {
+        "start_time": "00:31:52",
+        "end_time": "00:31:59",
+        "text": "middle here. Because the output is the output. That's not going to change. You know, it's"
+    },
+    {
+        "start_time": "00:31:59",
+        "end_time": "00:32:05",
+        "text": "easier to dog out a cat. You don't have any choice as to what it is. Okay. The only agency you have,"
+    },
+    {
+        "start_time": "00:32:06",
+        "end_time": "00:32:09",
+        "text": "at this point, is you can take the raw input and do things in the middle with it."
+    },
+    {
+        "start_time": "00:32:10",
+        "end_time": "00:32:15",
+        "text": "You can do a lot of stuff in the middle and then run it through something to get the output."
+    },
+    {
+        "start_time": "00:32:15",
+        "end_time": "00:32:22",
+        "text": "Okay. So, in any mathematical discipline, if someone comes to you and says, here's a bunch"
+    },
+    {
+        "start_time": "00:32:22",
+        "end_time": "00:32:27",
+        "text": "of data, I want you to do something with it. What should the, what is the, the, the most basic"
+    },
+    {
+        "start_time": "00:32:27",
+        "end_time": "00:32:35",
+        "text": "first thing you should do? Run it through a linear function. The most basic thing in math is a"
+    },
+    {
+        "start_time": "00:32:35",
+        "end_time": "00:32:38",
+        "text": "linear function. So, given anything just running through a linear function, see what happens."
+    },
+    {
+        "start_time": "00:32:40",
+        "end_time": "00:32:45",
+        "text": "So, that's exactly what we can do. So, the simplest thing we can do here, we can insert a bunch"
+    },
+    {
+        "start_time": "00:32:45",
+        "end_time": "00:32:50",
+        "text": "of linear functions. So, we do is, we take all this input and we just run it, we do a linear"
+    },
+    {
+        "start_time": "00:32:50",
+        "end_time": "00:32:56",
+        "text": "function on it. So, think of it this as x1 times 2 plus x3 times 4 and all the way to xk times 9,"
+    },
+    {
+        "start_time": "00:32:56",
+        "end_time": "00:33:02",
+        "text": "plus some intercept and boom, it goes to the other end. So, this little circle here with a plus"
+    },
+    {
+        "start_time": "00:33:02",
+        "end_time": "00:33:09",
+        "text": "in it is just, thank you. This is just a linear, it's a shorthand for a linear function."
+    },
+    {
+        "start_time": "00:33:10",
+        "end_time": "00:33:13",
+        "text": "So, whenever you see a circle with a plus, it's just a shorthand for a linear function."
+    },
+    {
+        "start_time": "00:33:14",
+        "end_time": "00:33:17",
+        "text": "So, you can take this whole thing and run through a linear function and when you do it,"
+    },
+    {
+        "start_time": "00:33:17",
+        "end_time": "00:33:21",
+        "text": "you'll get some number right there. You'll get some number. So, you have taken these k numbers"
+    },
+    {
+        "start_time": "00:33:21",
+        "end_time": "00:33:28",
+        "text": "and you have sort of compressed them in some way into one number. But you don't have to stop at one"
+    },
+    {
+        "start_time": "00:33:28",
+        "end_time": "00:33:32",
+        "text": "number, you can do more. So, we can have a stack of linear functions in the middle."
+    },
+    {
+        "start_time": "00:33:33",
+        "end_time": "00:33:38",
+        "text": "This is a linear function here, another one here, another one here. At this point, the k numbers"
+    },
+    {
+        "start_time": "00:33:38",
+        "end_time": "00:33:44",
+        "text": "you have, k could be for example a thousand, it's just a size of your input data. You have taken"
+    },
+    {
+        "start_time": "00:33:44",
+        "end_time": "00:33:47",
+        "text": "these k things and you have compressed them into three numbers at this point."
+    },
+    {
+        "start_time": "00:33:50",
+        "end_time": "00:33:53",
+        "text": "So, maybe three is the right number, maybe ten is the right number, we don't know."
+    },
+    {
+        "start_time": "00:33:54",
+        "end_time": "00:33:56",
+        "text": "And we'll get to, how do you know what the right number is later on."
+    },
+    {
+        "start_time": "00:33:58",
+        "end_time": "00:34:02",
+        "text": "So, we can stack as many linear functions we want. So, we have transformed this k thing into a"
+    },
+    {
+        "start_time": "00:34:02",
+        "end_time": "00:34:09",
+        "text": "three-dimensional vector, right? k numbers become three numbers. And now, we can flow this three,"
+    },
+    {
+        "start_time": "00:34:10",
+        "end_time": "00:34:12",
+        "text": "these three numbers through some other little function."
+    },
+    {
+        "start_time": "00:34:16",
+        "end_time": "00:34:19",
+        "text": "And as you will see in a few minutes, that function is called an activation function."
+    },
+    {
+        "start_time": "00:34:20",
+        "end_time": "00:34:24",
+        "text": "And it shows in to be a non-linear function. Because if you don't choose it to be a non-linear"
+    },
+    {
+        "start_time": "00:34:24",
+        "end_time": "00:34:29",
+        "text": "function, all the effort we are doing is that going to be a total waste of time."
+    },
+    {
+        "start_time": "00:34:31",
+        "end_time": "00:34:35",
+        "text": "For now, just take it on faith that you need to have non-linear functions here."
+    },
+    {
+        "start_time": "00:34:36",
+        "end_time": "00:34:41",
+        "text": "But note that the three numbers here are still three numbers. They are three different numbers"
+    },
+    {
+        "start_time": "00:34:41",
+        "end_time": "00:34:46",
+        "text": "with your three numbers. And once we do this, we will be like, you know what? This was fun. Let's do it again."
+    },
+    {
+        "start_time": "00:34:48",
+        "end_time": "00:34:54",
+        "text": "So, you can do it again. And you can keep on doing it. You can keep it a hundred times if you want."
+    },
+    {
+        "start_time": "00:34:55",
+        "end_time": "00:35:01",
+        "text": "And the key thing is that every time you do it, you are giving this network some ability,"
+    },
+    {
+        "start_time": "00:35:01",
+        "end_time": "00:35:06",
+        "text": "some capacity to learn something interesting from the data, to learn an interesting representation."
+    },
+    {
+        "start_time": "00:35:07",
+        "end_time": "00:35:11",
+        "text": "Now, of course, you are thinking, well, how do we know it's interesting? How do we know it's a"
+    },
+    {
+        "start_time": "00:35:11",
+        "end_time": "00:35:15",
+        "text": "useful thing? And we will come to all that later on, right? We are just giving it the capacity,"
+    },
+    {
+        "start_time": "00:35:15",
+        "end_time": "00:35:19",
+        "text": "the potential to learn interesting things from the data, whether it actually lives up to its"
+    },
+    {
+        "start_time": "00:35:19",
+        "end_time": "00:35:24",
+        "text": "potential, we don't know yet. We will give it the potential. Because the more transformations of"
+    },
+    {
+        "start_time": "00:35:24",
+        "end_time": "00:35:28",
+        "text": "the input data you make, the more opportunity you have to do interesting things with it."
+    },
+    {
+        "start_time": "00:35:28",
+        "end_time": "00:35:32",
+        "text": "If I don't even give you the opportunity to transform it once, you don't have any opportunity,"
+    },
+    {
+        "start_time": "00:35:32",
+        "end_time": "00:35:36",
+        "text": "right? If I give you 10 chances to transform things, you have 10 shots at doing something useful."
+    },
+    {
+        "start_time": "00:35:38",
+        "end_time": "00:35:43",
+        "text": "So, you can do this repeatedly. And once we are done doing these transformations,"
+    },
+    {
+        "start_time": "00:35:43",
+        "end_time": "00:35:47",
+        "text": "we just pipe it through to our good old logistic regression sigmoid here, and we are done."
+    },
+    {
+        "start_time": "00:35:51",
+        "end_time": "00:35:57",
+        "text": "So, this is the basic idea. And so, just to contrast it, this was good old logistic regression,"
+    },
+    {
+        "start_time": "00:35:57",
+        "end_time": "00:36:02",
+        "text": "where we take the input, we run it through a linear function and pop out a number, a probability"
+    },
+    {
+        "start_time": "00:36:02",
+        "end_time": "00:36:08",
+        "text": "number. But after we do all this stuff, the input stays the same, the output stays the same,"
+    },
+    {
+        "start_time": "00:36:08",
+        "end_time": "00:36:11",
+        "text": "but in the middle, we just run it through a whole bunch of these functions, you know,"
+    },
+    {
+        "start_time": "00:36:11",
+        "end_time": "00:36:16",
+        "text": "these layers, boob boob boob and then we get the output, okay? That's all we have done. And this"
+    },
+    {
+        "start_time": "00:36:16",
+        "end_time": "00:36:24",
+        "text": "is a neural network. A neural network is nothing more than repeatedly transformed inputs,"
+    },
+    {
+        "start_time": "00:36:24",
+        "end_time": "00:36:28",
+        "text": "which are finally fed to a linear or logistic regression model."
+    },
+    {
+        "start_time": "00:36:35",
+        "end_time": "00:36:39",
+        "text": "Any questions? Could you use the thing so that everyone can hear?"
+    },
+    {
+        "start_time": "00:36:41",
+        "end_time": "00:36:45",
+        "text": "There are two questions. Firstly, so maybe say that there is a chance of"
+    },
+    {
+        "start_time": "00:36:45",
+        "end_time": "00:36:51",
+        "text": "explainability, is it that we don't know which arrow it went through? That's one. Second,"
+    },
+    {
+        "start_time": "00:36:53",
+        "end_time": "00:36:59",
+        "text": "who's controlling the number of iterations or the number of functions? That's up to us, or how is that?"
+    },
+    {
+        "start_time": "00:37:00",
+        "end_time": "00:37:05",
+        "text": "So, the first question, explainability, we actually know exactly, for any given input,"
+    },
+    {
+        "start_time": "00:37:06",
+        "end_time": "00:37:11",
+        "text": "input data, data point, we know exactly how it flows through the network. So, there is no problem"
+    },
+    {
+        "start_time": "00:37:12",
+        "end_time": "00:37:17",
+        "text": "there. The problem is in ascribing, okay, we think this person is going to be"
+    },
+    {
+        "start_time": "00:37:17",
+        "end_time": "00:37:22",
+        "text": "repay the loan because of this particular attribute, we don't know that because"
+    },
+    {
+        "start_time": "00:37:23",
+        "end_time": "00:37:26",
+        "text": "those attributes all get enmeshed together and goes through this complicated thing."
+    },
+    {
+        "start_time": "00:37:26",
+        "end_time": "00:37:30",
+        "text": "So, we know exactly what happens, we just can't give credit to any one thing very easily."
+    },
+    {
+        "start_time": "00:37:31",
+        "end_time": "00:37:36",
+        "text": "I'm again, I'm just standing on the brink of this vast ocean of something called explainability"
+    },
+    {
+        "start_time": "00:37:36",
+        "end_time": "00:37:40",
+        "text": "and interpretability, which I'll get to a bit later on in the semester, but that's sort of the"
+    },
+    {
+        "start_time": "00:37:40",
+        "end_time": "00:37:49",
+        "text": "quick kind of rightish kind of wrong answer, okay. Number two, we decide the number of layers,"
+    },
+    {
+        "start_time": "00:37:49",
+        "end_time": "00:37:53",
+        "text": "we decide a whole bunch of things and as we'll see in a few minutes, there is something that's"
+    },
+    {
+        "start_time": "00:37:53",
+        "end_time": "00:37:56",
+        "text": "given to us and something we get to design and I'll make it very clear, which is which."
+    },
+    {
+        "start_time": "00:37:59",
+        "end_time": "00:38:07",
+        "text": "Yeah. Did I say your name right? Yeah. So, which functions have to be linear and also like why"
+    },
+    {
+        "start_time": "00:38:07",
+        "end_time": "00:38:14",
+        "text": "this have to be linear? Yeah. So, these functions, the f of x here, they have to be nonlinear,"
+    },
+    {
+        "start_time": "00:38:15",
+        "end_time": "00:38:18",
+        "text": "as to why they have to be nonlinear, we'll get to that in a few minutes."
+    },
+    {
+        "start_time": "00:38:19",
+        "end_time": "00:38:25",
+        "text": "Okay. So, these are called neurons, okay. These things where you basically, there's a linear"
+    },
+    {
+        "start_time": "00:38:25",
+        "end_time": "00:38:31",
+        "text": "function followed by a little nonlinear function, right. This is a, each one of these things is called"
+    },
+    {
+        "start_time": "00:38:31",
+        "end_time": "00:38:40",
+        "text": "a neuron, by the way, you know, this is loosely inspired by the way how, you know, neurons work in"
+    },
+    {
+        "start_time": "00:38:40",
+        "end_time": "00:38:48",
+        "text": "human, in mammalian brains, but the connections between neuroscience and deep learning are very"
+    },
+    {
+        "start_time": "00:38:49",
+        "end_time": "00:38:55",
+        "text": "heavily argued. So, I'm going to like stay away from it, okay. Suffice it to say, I just think"
+    },
+    {
+        "start_time": "00:38:55",
+        "end_time": "00:39:00",
+        "text": "for building practical deep learning systems and industry, you're not worried about this, okay."
+    },
+    {
+        "start_time": "00:39:01",
+        "end_time": "00:39:08",
+        "text": "All right, let's move on. Terminology, this vertical stack of linear functions or neurons,"
+    },
+    {
+        "start_time": "00:39:09",
+        "end_time": "00:39:13",
+        "text": "right. This vertical stack is called a layer, right. This layer, that's a layer,"
+    },
+    {
+        "start_time": "00:39:14",
+        "end_time": "00:39:19",
+        "text": "and these little nonlinear functions which we haven't gotten to yet, or called activation functions,"
+    },
+    {
+        "start_time": "00:39:20",
+        "end_time": "00:39:23",
+        "text": "and we'll get to why they are called that in just a second."
+    },
+    {
+        "start_time": "00:39:23",
+        "end_time": "00:39:33",
+        "text": "And the input is called an input layer, and I have the word layer in double codes because,"
+    },
+    {
+        "start_time": "00:39:33",
+        "end_time": "00:39:38",
+        "text": "like it's not really doing anything, right. It's just the input. So, but we call it the input layer,"
+    },
+    {
+        "start_time": "00:39:39",
+        "end_time": "00:39:44",
+        "text": "and what the very final thing that producer output is called the output layer, right. Obviously,"
+    },
+    {
+        "start_time": "00:39:44",
+        "end_time": "00:39:52",
+        "text": "and everything in the middle is called a hidden layer, okay. So, the final piece of terminology is"
+    },
+    {
+        "start_time": "00:39:52",
+        "end_time": "00:39:56",
+        "text": "that when you have a layer like this, in which say three numbers are coming out, and there's another"
+    },
+    {
+        "start_time": "00:39:56",
+        "end_time": "00:40:02",
+        "text": "layer, right. If every neuron in this layer is connected to every neuron in this layer,"
+    },
+    {
+        "start_time": "00:40:03",
+        "end_time": "00:40:08",
+        "text": "it's called a fully connected or dense layer. So, for instance here, this arrow that's,"
+    },
+    {
+        "start_time": "00:40:08",
+        "end_time": "00:40:12",
+        "text": "whatever the number number is coming out, let's say the number three is coming out of this thing here,"
+    },
+    {
+        "start_time": "00:40:12",
+        "end_time": "00:40:18",
+        "text": "that number three goes flows on this arrow to this thing, flows on this arrow to this neuron,"
+    },
+    {
+        "start_time": "00:40:18",
+        "end_time": "00:40:22",
+        "text": "and flows on this third arrow to this neuron. That's what I mean. So, every neuron,"
+    },
+    {
+        "start_time": "00:40:22",
+        "end_time": "00:40:27",
+        "text": "its output is being sent to every neuron in the following layer, okay. That's, we call it fully"
+    },
+    {
+        "start_time": "00:40:27",
+        "end_time": "00:40:33",
+        "text": "connected or dense. And then, if you look at logic regression, right, this is just logic regression,"
+    },
+    {
+        "start_time": "00:40:34",
+        "end_time": "00:40:38",
+        "text": "you can see basically, logistic regression is a neural network with no hidden layers."
+    },
+    {
+        "start_time": "00:40:40",
+        "end_time": "00:40:44",
+        "text": "So, in some sense, logic regression is like almost the simplest possible network you can think of,"
+    },
+    {
+        "start_time": "00:40:45",
+        "end_time": "00:40:51",
+        "text": "like barely a neural network, right. It's got no hidden layers. That's what makes it logic regression."
+    },
+    {
+        "start_time": "00:40:52",
+        "end_time": "00:40:57",
+        "text": "And so, as you might have guessed by now, deep learning is just neural networks with lots and lots of,"
+    },
+    {
+        "start_time": "00:40:58",
+        "end_time": "00:41:08",
+        "text": "of what? Yes, layers. So, here are a few. And by the way, these are not even considered all that,"
+    },
+    {
+        "start_time": "00:41:08",
+        "end_time": "00:41:14",
+        "text": "you know, impressive these days, okay. But I put them up because this thing here is called"
+    },
+    {
+        "start_time": "00:41:14",
+        "end_time": "00:41:20",
+        "text": "ResNet. And it's famous because the ResNet neural network was, I think the first network"
+    },
+    {
+        "start_time": "00:41:21",
+        "end_time": "00:41:28",
+        "text": "to surpass human level performance and image classification. It's sort of like the sky net"
+    },
+    {
+        "start_time": "00:41:28",
+        "end_time": "00:41:33",
+        "text": "of image classification, okay. It's surpassed human level performance. And I'm putting it up here"
+    },
+    {
+        "start_time": "00:41:33",
+        "end_time": "00:41:38",
+        "text": "because we'll actually work with ResNet on next next Wednesday. And we'll actually take ResNet,"
+    },
+    {
+        "start_time": "00:41:38",
+        "end_time": "00:41:44",
+        "text": "we'll find you to solve a real problem in class. All right, so it's got lots and lots of layers."
+    },
+    {
+        "start_time": "00:41:45",
+        "end_time": "00:41:48",
+        "text": "Now, let's turn to these activation functions. We have been ignoring these little guys, right,"
+    },
+    {
+        "start_time": "00:41:48",
+        "end_time": "00:41:55",
+        "text": "so far. So, the activation function at a node is a, first of all, it's a function that receives"
+    },
+    {
+        "start_time": "00:41:55",
+        "end_time": "00:42:00",
+        "text": "a single number and outputs a single number, right. It's not very complicated, right. It receives,"
+    },
+    {
+        "start_time": "00:42:00",
+        "end_time": "00:42:05",
+        "text": "basically, this, this is a linear function which receives all these inputs. It could be 10 inputs,"
+    },
+    {
+        "start_time": "00:42:05",
+        "end_time": "00:42:10",
+        "text": "a thousand inputs, a run-sithral linear function, outputs a number. And that single number, a scalar"
+    },
+    {
+        "start_time": "00:42:10",
+        "end_time": "00:42:17",
+        "text": "goes in here and it comes out as another single number. Just, just, just remember that. And so,"
+    },
+    {
+        "start_time": "00:42:17",
+        "end_time": "00:42:20",
+        "text": "these are some of the most common activation functions. In fact, the sigmoid we saw,"
+    },
+    {
+        "start_time": "00:42:20",
+        "end_time": "00:42:24",
+        "text": "which is actually be used for the output, is actually a kind of activation function,"
+    },
+    {
+        "start_time": "00:42:24",
+        "end_time": "00:42:30",
+        "text": "where a single number comes in and it gets mapped into this curve because of this thing. So,"
+    },
+    {
+        "start_time": "00:42:30",
+        "end_time": "00:42:34",
+        "text": "the single number that comes in is a and it gets transformed as one divided by one plus"
+    },
+    {
+        "start_time": "00:42:34",
+        "end_time": "00:42:39",
+        "text": "garies to minus a and you get a shape like this and it's called the sigmoid activation function."
+    },
+    {
+        "start_time": "00:42:39",
+        "end_time": "00:42:46",
+        "text": "And as you can see here, for very small values, for very negative values, it's going to be pretty close"
+    },
+    {
+        "start_time": "00:42:46",
+        "end_time": "00:42:53",
+        "text": "to zero, meaning it won't get activated. And for very, very large values, it's going to be pretty"
+    },
+    {
+        "start_time": "00:42:53",
+        "end_time": "00:42:59",
+        "text": "close to one. All the action happens in the middle. When your values are somewhere in this range,"
+    },
+    {
+        "start_time": "00:42:59",
+        "end_time": "00:43:06",
+        "text": "there's a dramatic increases in what comes out. So, that little thing in the middle is a sweet spot"
+    },
+    {
+        "start_time": "00:43:06",
+        "end_time": "00:43:13",
+        "text": "for these functions. And this, I'm also almost embarrassed to call it an activation function because"
+    },
+    {
+        "start_time": "00:43:13",
+        "end_time": "00:43:18",
+        "text": "it's really not doing anything. It's sort of getting a nice label for free. You basically, it says,"
+    },
+    {
+        "start_time": "00:43:18",
+        "end_time": "00:43:22",
+        "text": "you just get a number, it just passes straight along. It's a linear activation function, but just"
+    },
+    {
+        "start_time": "00:43:22",
+        "end_time": "00:43:29",
+        "text": "for completeness, I want to put it here. And then we come to the hero of deep learning, which is"
+    },
+    {
+        "start_time": "00:43:29",
+        "end_time": "00:43:37",
+        "text": "the rectified linear unit. Right? rectified linear unit. It's called relu. And relu is going to become"
+    },
+    {
+        "start_time": "00:43:37",
+        "end_time": "00:43:42",
+        "text": "part of your vocabulary very, very quickly. And so relu is actually a very interesting function. So,"
+    },
+    {
+        "start_time": "00:43:42",
+        "end_time": "00:43:48",
+        "text": "you write it as maximum of whatever number and zero, which is another way of saying, if the number"
+    },
+    {
+        "start_time": "00:43:48",
+        "end_time": "00:43:55",
+        "text": "is positive, just send it along unchanged. If the number is negative, send a zero instead, squash it"
+    },
+    {
+        "start_time": "00:43:55",
+        "end_time": "00:44:00",
+        "text": "to zero. So, which means if the number is negative, nothing happens, if the number is positive, it"
+    },
+    {
+        "start_time": "00:44:00",
+        "end_time": "00:44:07",
+        "text": "wakes up. So, what happens is that you could have a very complicated linear function with millions of"
+    },
+    {
+        "start_time": "00:44:07",
+        "end_time": "00:44:11",
+        "text": "variables. And then it puts a single number and that number unfortunately happens to be negative."
+    },
+    {
+        "start_time": "00:44:12",
+        "end_time": "00:44:16",
+        "text": "The relu is not impressed. It's going to set a zero out. It's a very simple function."
+    },
+    {
+        "start_time": "00:44:17",
+        "end_time": "00:44:23",
+        "text": "And many, many folks who have been in deep learning for a long, long time believe that the use of"
+    },
+    {
+        "start_time": "00:44:23",
+        "end_time": "00:44:29",
+        "text": "the relu is one of the key factors that led to the amazing success of deep learning, because it's"
+    },
+    {
+        "start_time": "00:44:29",
+        "end_time": "00:44:34",
+        "text": "got some very interesting properties, which we'll get to hopefully on Wednesday."
+    },
+    {
+        "start_time": "00:44:35",
+        "end_time": "00:44:42",
+        "text": "Okay, so the shorthand here is that whenever you see this thing, it's just a linear activation,"
+    },
+    {
+        "start_time": "00:44:42",
+        "end_time": "00:44:48",
+        "text": "linear function followed, we just send it straight out. If I put a relu in here, I'm going to"
+    },
+    {
+        "start_time": "00:44:48",
+        "end_time": "00:44:54",
+        "text": "denote it like that, which mimics the graph, how it looks. And if I put a sigmoid, I'm just going"
+    },
+    {
+        "start_time": "00:44:54",
+        "end_time": "00:45:03",
+        "text": "to use this thing here. Just a visual shorthand. There are many other functions, activation functions,"
+    },
+    {
+        "start_time": "00:45:03",
+        "end_time": "00:45:08",
+        "text": "by the way. There's something called the tanage function, the leaky relu, the galu, the swish."
+    },
+    {
+        "start_time": "00:45:08",
+        "end_time": "00:45:13",
+        "text": "I mean, it's like a menagerie of activation functions, because very often researchers will be like,"
+    },
+    {
+        "start_time": "00:45:13",
+        "end_time": "00:45:17",
+        "text": "well, I don't like this activation function. Here's a little modified version of the function,"
+    },
+    {
+        "start_time": "00:45:17",
+        "end_time": "00:45:21",
+        "text": "which is going to be better for certain things. So, you know, people's research creativity is sort of"
+    },
+    {
+        "start_time": "00:45:21",
+        "end_time": "00:45:26",
+        "text": "at this point has gone unhinged. So lots of options. But if you just stick to the relu"
+    },
+    {
+        "start_time": "00:45:27",
+        "end_time": "00:45:32",
+        "text": "for your hidden layers, you can basically get anything done practically, right? You don't worry"
+    },
+    {
+        "start_time": "00:45:32",
+        "end_time": "00:45:37",
+        "text": "about anything else. So we'll only focus on relus for all the intermediate stuff. Yeah."
+    },
+    {
+        "start_time": "00:45:38",
+        "end_time": "00:45:42",
+        "text": "Yeah, how do you gauge which activation functions more in a previous case?"
+    },
+    {
+        "start_time": "00:45:42",
+        "end_time": "00:45:49",
+        "text": "Yeah. So, the rule of thumb here is that for your hidden layers, use relus, right? Because empirically,"
+    },
+    {
+        "start_time": "00:45:49",
+        "end_time": "00:45:54",
+        "text": "we have seen that they do an amazing job. For your output layer, you're very final thing,"
+    },
+    {
+        "start_time": "00:45:54",
+        "end_time": "00:45:58",
+        "text": "you actually don't have a choice. Because what you have to use depends on what kind of output you"
+    },
+    {
+        "start_time": "00:45:58",
+        "end_time": "00:46:03",
+        "text": "have to work with. If it's an output, which is a probability number between 0 and 1, you have to use"
+    },
+    {
+        "start_time": "00:46:03",
+        "end_time": "00:46:08",
+        "text": "a sigmoid. If it is, say, 10 numbers, all of which have to be probabilities and they have to add up"
+    },
+    {
+        "start_time": "00:46:08",
+        "end_time": "00:46:13",
+        "text": "to 1, you're going to use something called the softmax, which will get to 1 Wednesday. So it really"
+    },
+    {
+        "start_time": "00:46:13",
+        "end_time": "00:46:17",
+        "text": "depends on the output and the nature of the output dictates what you use in the output layer."
+    },
+    {
+        "start_time": "00:46:18",
+        "end_time": "00:46:24",
+        "text": "Okay. So coming back to this, so if you want to design a deep neural network,"
+    },
+    {
+        "start_time": "00:46:25",
+        "end_time": "00:46:30",
+        "text": "the input is the input. The output is the output. And so you get to choose everything else."
+    },
+    {
+        "start_time": "00:46:30",
+        "end_time": "00:46:34",
+        "text": "You get to choose the number of hidden layers, the number of neurons in each layer,"
+    },
+    {
+        "start_time": "00:46:35",
+        "end_time": "00:46:40",
+        "text": "the activation functions you're going to use, and for the hidden layers. And then you have to make"
+    },
+    {
+        "start_time": "00:46:40",
+        "end_time": "00:46:44",
+        "text": "sure that what you choose with the output layer matches the kind of output you want to generate."
+    },
+    {
+        "start_time": "00:46:44",
+        "end_time": "00:46:49",
+        "text": "Okay. So this is sort of, this is all in your hands. You decide what happens. But"
+    },
+    {
+        "start_time": "00:46:50",
+        "end_time": "00:46:54",
+        "text": "you will, there's a lot of guidance for how to do these things which will cover as we go along."
+    },
+    {
+        "start_time": "00:46:56",
+        "end_time": "00:46:56",
+        "text": "Did you have a question?"
+    },
+    {
+        "start_time": "00:46:56",
+        "end_time": "00:46:58",
+        "text": "Kind of, but I guess I'll do it."
+    },
+    {
+        "start_time": "00:47:00",
+        "end_time": "00:47:07",
+        "text": "Is there also exploration kind of dynamic setting up layers so that for users"
+    },
+    {
+        "start_time": "00:47:07",
+        "end_time": "00:47:11",
+        "text": "being Germany and the Maw layers, it's all this fine. It's all layers."
+    },
+    {
+        "start_time": "00:47:12",
+        "end_time": "00:47:17",
+        "text": "Yeah. So there's a whole field called neural architecture search, NAS, where we can actually"
+    },
+    {
+        "start_time": "00:47:17",
+        "end_time": "00:47:23",
+        "text": "try a whole bunch of different architectures and then use some optimization and in fact reinforcement"
+    },
+    {
+        "start_time": "00:47:23",
+        "end_time": "00:47:27",
+        "text": "learning, which we won't get to in this class, as a way to figure out really good architectures for"
+    },
+    {
+        "start_time": "00:47:27",
+        "end_time": "00:47:35",
+        "text": "any particular problem. But the question of okay, when I'm training a model with a particular"
+    },
+    {
+        "start_time": "00:47:35",
+        "end_time": "00:47:39",
+        "text": "kind of data, the first pass through the training data I'm going to use two layers. The second pass"
+    },
+    {
+        "start_time": "00:47:39",
+        "end_time": "00:47:45",
+        "text": "I'm going to do seven layers, that is not done. And the reason it's not done is because of certain"
+    },
+    {
+        "start_time": "00:47:45",
+        "end_time": "00:47:49",
+        "text": "other constraints we have and how we can do the optimization and the gradient descent and stuff"
+    },
+    {
+        "start_time": "00:47:49",
+        "end_time": "00:47:55",
+        "text": "like that. But what you can do and we will, you look at this thing called dropout. For certain layers,"
+    },
+    {
+        "start_time": "00:47:55",
+        "end_time": "00:48:00",
+        "text": "you can actually, for each time you run it through the network, you can decide this layer, I'm not"
+    },
+    {
+        "start_time": "00:48:00",
+        "end_time": "00:48:05",
+        "text": "going to use all the nodes. I'm going to dropout a few of the nodes randomly. And it's a very"
+    },
+    {
+        "start_time": "00:48:05",
+        "end_time": "00:48:10",
+        "text": "effective technique to prevent overfitting and we'll come to that a little later on. Yeah."
+    },
+    {
+        "start_time": "00:48:11",
+        "end_time": "00:48:16",
+        "text": "One question regarding like, unit liquids, is about the coefficients. This is just one of the"
+    },
+    {
+        "start_time": "00:48:16",
+        "end_time": "00:48:21",
+        "text": "sizes, why not, we have to use it as a requirement for the weights."
+    },
+    {
+        "start_time": "00:48:22",
+        "end_time": "00:48:27",
+        "text": "No, the whole trick here, the whole name of the game is we use the data, the training data,"
+    },
+    {
+        "start_time": "00:48:27",
+        "end_time": "00:48:32",
+        "text": "and something called a loss function, which I'll get to on Wednesday, along with an optimization"
+    },
+    {
+        "start_time": "00:48:32",
+        "end_time": "00:48:38",
+        "text": "algorithm. So the network figures out by itself what the weights need to be, what the coefficients"
+    },
+    {
+        "start_time": "00:48:38",
+        "end_time": "00:48:44",
+        "text": "need to be, so as to minimize prediction error. And that's the whole thing. The magic here is that"
+    },
+    {
+        "start_time": "00:48:44",
+        "end_time": "00:48:49",
+        "text": "we don't have to do anything. We only have to set it up, sit back often for many hours and watch it"
+    },
+    {
+        "start_time": "00:48:49",
+        "end_time": "00:48:56",
+        "text": "do its thing. Yep. Just one question. You mentioned nodes just now, we've got this very"
+    },
+    {
+        "start_time": "00:48:56",
+        "end_time": "00:49:02",
+        "text": "long-distance question. Can you just come up exactly what a node is? I have an idea that it's basically"
+    },
+    {
+        "start_time": "00:49:02",
+        "end_time": "00:49:07",
+        "text": "any sort of call but you just added a lot more detail. Sure. No, when I'm referring to a node,"
+    },
+    {
+        "start_time": "00:49:07",
+        "end_time": "00:49:11",
+        "text": "I'm literally referring to something like this, which think of it as a linear function,"
+    },
+    {
+        "start_time": "00:49:12",
+        "end_time": "00:49:16",
+        "text": "followed by a nonlinear activation. So it reads a bunch of inputs, runs it through a linear"
+    },
+    {
+        "start_time": "00:49:16",
+        "end_time": "00:49:21",
+        "text": "function, and passes through like a relu or a sigmoid or something, and out pops a number."
+    },
+    {
+        "start_time": "00:49:22",
+        "end_time": "00:49:27",
+        "text": "So in general, a node will have many numbers potentially coming in, but only one number going out."
+    },
+    {
+        "start_time": "00:49:28",
+        "end_time": "00:49:33",
+        "text": "Now that one number make it copy to every node in the next layer, but what comes out of that"
+    },
+    {
+        "start_time": "00:49:33",
+        "end_time": "00:49:40",
+        "text": "particular node is just a single number. All right. So let's use a DNN for our interview"
+    },
+    {
+        "start_time": "00:49:41",
+        "end_time": "00:49:47",
+        "text": "example. So in this problem, we had two inputs, right? GPN experience. The output variable has to"
+    },
+    {
+        "start_time": "00:49:47",
+        "end_time": "00:49:50",
+        "text": "be between 0 and 1, because you're trying to predict the probability that someone gets called"
+    },
+    {
+        "start_time": "00:49:50",
+        "end_time": "00:49:55",
+        "text": "for an interview. So the output sizes fixed, sorry, the input sizes fixed, the output is fixed."
+    },
+    {
+        "start_time": "00:49:56",
+        "end_time": "00:50:01",
+        "text": "And so since it's really the only the very first network we're actually playing with,"
+    },
+    {
+        "start_time": "00:50:01",
+        "end_time": "00:50:07",
+        "text": "let's just start simple. We'll just have one hidden layer, and we'll have three neurons."
+    },
+    {
+        "start_time": "00:50:08",
+        "end_time": "00:50:14",
+        "text": "And as I mentioned to Thomas's question from before, if you are choosing activation functions in"
+    },
+    {
+        "start_time": "00:50:14",
+        "end_time": "00:50:18",
+        "text": "the hidden layers, just go with the relu. As a default, it usually works really well out of the"
+    },
+    {
+        "start_time": "00:50:18",
+        "end_time": "00:50:23",
+        "text": "box. So we'll just use a relu. And since the output has to be between 0 and 1, we don't have a"
+    },
+    {
+        "start_time": "00:50:23",
+        "end_time": "00:50:30",
+        "text": "choice. We have to use a sigmoid for the output layer. That's it. So those are the design choices."
+    },
+    {
+        "start_time": "00:50:30",
+        "end_time": "00:50:35",
+        "text": "And when we do that, this is how it's looked like. We have two inputs, X1 and X2, GPN experience,"
+    },
+    {
+        "start_time": "00:50:35",
+        "end_time": "00:50:41",
+        "text": "and then it goes through these three relus, and then out comes these three numbers, and they"
+    },
+    {
+        "start_time": "00:50:41",
+        "end_time": "00:50:46",
+        "text": "pass through a sigmoid, and we get a probability why at the end. All right, quick question. Concept check."
+    },
+    {
+        "start_time": "00:50:47",
+        "end_time": "00:50:53",
+        "text": "How many weights, how many parameters both weights and biases does this network have? Let's take a"
+    },
+    {
+        "start_time": "00:50:53",
+        "end_time": "00:50:55",
+        "text": "moment to count."
+    },
+    {
+        "start_time": "00:51:11",
+        "end_time": "00:51:12",
+        "text": "All right, any guesses?"
+    },
+    {
+        "start_time": "00:51:12",
+        "end_time": "00:51:14",
+        "text": "Yes."
+    },
+    {
+        "start_time": "00:51:18",
+        "end_time": "00:51:19",
+        "text": "I think you're almost there."
+    },
+    {
+        "start_time": "00:51:23",
+        "end_time": "00:51:26",
+        "text": "Are folks going to be doing a binary search on this now?"
+    },
+    {
+        "start_time": "00:51:29",
+        "end_time": "00:51:31",
+        "text": "No. Yes?"
+    },
+    {
+        "start_time": "00:51:32",
+        "end_time": "00:51:38",
+        "text": "Yes, very good. So that's 13. And my guess is that the reason you came over 12, and I've made"
+    },
+    {
+        "start_time": "00:51:38",
+        "end_time": "00:51:42",
+        "text": "the same mistake. That's why I know it. You probably forgot this green thing here."
+    },
+    {
+        "start_time": "00:51:45",
+        "end_time": "00:51:52",
+        "text": "So what folks often forget is the bias. We all count the things. And the easy way to do it is"
+    },
+    {
+        "start_time": "00:51:52",
+        "end_time": "00:51:58",
+        "text": "two things here. Three things here. Two times six. Three is six. Three times one is three,"
+    },
+    {
+        "start_time": "00:51:58",
+        "end_time": "00:52:04",
+        "text": "another nine, and then you have to add up all the intercepts. So you get 13. And so when we get"
+    },
+    {
+        "start_time": "00:52:04",
+        "end_time": "00:52:09",
+        "text": "to very complicated networks, the first two or three times you work with very complex networks,"
+    },
+    {
+        "start_time": "00:52:10",
+        "end_time": "00:52:15",
+        "text": "and we'll do it, starting very soon, just get it to the habit of hand calculating the number"
+    },
+    {
+        "start_time": "00:52:15",
+        "end_time": "00:52:18",
+        "text": "of parameters, just to make sure you understand what's going on. Once you get it right a couple of"
+    },
+    {
+        "start_time": "00:52:18",
+        "end_time": "00:52:23",
+        "text": "times, you don't do it anymore. The first couple of times hand calculate to make sure you get it."
+    },
+    {
+        "start_time": "00:52:24",
+        "end_time": "00:52:30",
+        "text": "So yeah, so let's say that we have trained this network using techniques which we'll cover on"
+    },
+    {
+        "start_time": "00:52:30",
+        "end_time": "00:52:35",
+        "text": "Wednesday. And it comes back to you after training and says, okay, these are the optimal,"
+    },
+    {
+        "start_time": "00:52:35",
+        "end_time": "00:52:40",
+        "text": "the best values for the weights on the biases that I have found. So now your network is ready for"
+    },
+    {
+        "start_time": "00:52:40",
+        "end_time": "00:52:46",
+        "text": "action. It's ready to be used. And so what you can do is let's say that you want to predict with"
+    },
+    {
+        "start_time": "00:52:46",
+        "end_time": "00:52:54",
+        "text": "this network, if you have x1 and x2, what comes out of, so what comes out of the stop neuron,"
+    },
+    {
+        "start_time": "00:52:54",
+        "end_time": "00:53:00",
+        "text": "right, let's call it a1, it's basically this, okay, that's what's coming out of this thing."
+    },
+    {
+        "start_time": "00:53:00",
+        "end_time": "00:53:07",
+        "text": "For any x1 and x2, this is what's coming out. Similarly for a2 and a3, okay, and then what comes"
+    },
+    {
+        "start_time": "00:53:07",
+        "end_time": "00:53:14",
+        "text": "out at the very end is basically a1 times that plus a2 times that plus a3 times that plus 0.05,"
+    },
+    {
+        "start_time": "00:53:14",
+        "end_time": "00:53:20",
+        "text": "and the whole thing gets run through the sigmoid, and that's what you get, okay. So this slide"
+    },
+    {
+        "start_time": "00:53:20",
+        "end_time": "00:53:23",
+        "text": "in the one before, just make sure you look at it afterwards and to make sure you totally understand"
+    },
+    {
+        "start_time": "00:53:23",
+        "end_time": "00:53:28",
+        "text": "the mechanics of it, because this is really important. If you don't fully understand, like,"
+    },
+    {
+        "start_time": "00:53:28",
+        "end_time": "00:53:33",
+        "text": "internalize the mechanics, when we get to things like transformers, it's going to get hard, okay."
+    },
+    {
+        "start_time": "00:53:33",
+        "end_time": "00:53:36",
+        "text": "So just make sure it's like automatic at this point, it should be reflexive."
+    },
+    {
+        "start_time": "00:53:38",
+        "end_time": "00:53:42",
+        "text": "Okay, so yeah, and so when we want to predict anything, you just run some numbers through"
+    },
+    {
+        "start_time": "00:53:42",
+        "end_time": "00:53:46",
+        "text": "to get all these things, and boom, you calculate it, turns out to be 22.6, that's the answer."
+    },
+    {
+        "start_time": "00:53:47",
+        "end_time": "00:53:54",
+        "text": "All right, so I just want to say that, let's say that you built this network, and now you're like,"
+    },
+    {
+        "start_time": "00:53:54",
+        "end_time": "00:54:00",
+        "text": "hey, given any x1 and x2, I can come up with a y, but I'm feeling a little mathy. Can we actually"
+    },
+    {
+        "start_time": "00:54:00",
+        "end_time": "00:54:03",
+        "text": "write down the function? Yeah, you can write down the function. This is what it looks like."
+    },
+    {
+        "start_time": "00:54:07",
+        "end_time": "00:54:15",
+        "text": "Superinterpretable, right? So this goes to the comment that it are you made earlier on, where the"
+    },
+    {
+        "start_time": "00:54:15",
+        "end_time": "00:54:21",
+        "text": "act of depicting something using this sort of graphical layout makes it so much easier to reason"
+    },
+    {
+        "start_time": "00:54:21",
+        "end_time": "00:54:25",
+        "text": "with, and to think about, compared to trying to figure out what this function is doing."
+    },
+    {
+        "start_time": "00:54:26",
+        "end_time": "00:54:32",
+        "text": "Right? The other point I want to make is that, this contrast, what we just saw with the"
+    },
+    {
+        "start_time": "00:54:32",
+        "end_time": "00:54:36",
+        "text": "logic regression thing we saw earlier, which was this little function. And so here,"
+    },
+    {
+        "start_time": "00:54:38",
+        "end_time": "00:54:43",
+        "text": "even this simple network, with just three hidden layers, sorry, three nodes in that single hidden"
+    },
+    {
+        "start_time": "00:54:43",
+        "end_time": "00:54:48",
+        "text": "layer, right? It's so much more complicated than the logistic regression model, so much more"
+    },
+    {
+        "start_time": "00:54:48",
+        "end_time": "00:54:55",
+        "text": "complicated, right? And it is from this complexity springs the ability of these networks to do"
+    },
+    {
+        "start_time": "00:54:55",
+        "end_time": "00:54:59",
+        "text": "basically magical things, right? That's where the complexity comes from. That's where the magic"
+    },
+    {
+        "start_time": "00:54:59",
+        "end_time": "00:55:03",
+        "text": "comes from. So, and here in this case, the number of variables hasn't even changed. It's still"
+    },
+    {
+        "start_time": "00:55:03",
+        "end_time": "00:55:09",
+        "text": "only two, but we can go from the two inputs to the one output in very complicated ways."
+    },
+    {
+        "start_time": "00:55:09",
+        "end_time": "00:55:13",
+        "text": "As long as we know how to train these networks the right way, that's sort of the"
+    },
+    {
+        "start_time": "00:55:14",
+        "end_time": "00:55:19",
+        "text": "secret source, which we'll spend a lot of time on. So, yeah, to summarize, this is what we have,"
+    },
+    {
+        "start_time": "00:55:19",
+        "end_time": "00:55:23",
+        "text": "it's a deep neural network. By the way, this kind of network where things just flow from left to"
+    },
+    {
+        "start_time": "00:55:23",
+        "end_time": "00:55:29",
+        "text": "right, it's called a feed forward neural network, in contrast to some other kinds of networks,"
+    },
+    {
+        "start_time": "00:55:29",
+        "end_time": "00:55:36",
+        "text": "called recurrent networks, which you won't get to in this class, because transformers have actually"
+    },
+    {
+        "start_time": "00:55:36",
+        "end_time": "00:55:40",
+        "text": "proven to be much more capable than recurrent networks, and those have become the norms,"
+    },
+    {
+        "start_time": "00:55:40",
+        "end_time": "00:55:45",
+        "text": "so we just focus on those instead. And so, this arrangement of neurons into layers and activation"
+    },
+    {
+        "start_time": "00:55:45",
+        "end_time": "00:55:50",
+        "text": "functions and all that stuff, this is called the architecture of the neural network. And as you will"
+    },
+    {
+        "start_time": "00:55:50",
+        "end_time": "00:55:55",
+        "text": "see later on, the transformer, the famous transformer network is just an example of a particular"
+    },
+    {
+        "start_time": "00:55:55",
+        "end_time": "00:56:00",
+        "text": "neural network architecture, much like convolutional neural networks, which we'll get to next week,"
+    },
+    {
+        "start_time": "00:56:00",
+        "end_time": "00:56:06",
+        "text": "for computer vision, or another example of a particular network of architecture. So, we will"
+    },
+    {
+        "start_time": "00:56:06",
+        "end_time": "00:56:10",
+        "text": "focus on transformers, they are a particular kind of architecture. All right, so in summary,"
+    },
+    {
+        "start_time": "00:56:10",
+        "end_time": "00:56:14",
+        "text": "that's what we have, you know, you get to choose the hidden layers and the neurons activation"
+    },
+    {
+        "start_time": "00:56:14",
+        "end_time": "00:56:18",
+        "text": "functions, stuff like that, then you input some outputs on what you have to work with, and so,"
+    },
+    {
+        "start_time": "00:56:18",
+        "end_time": "00:56:26",
+        "text": "we will actually take this idea and then use it to actually solve a problem from start to finish"
+    },
+    {
+        "start_time": "00:56:26",
+        "end_time": "00:56:34",
+        "text": "on Wednesday. So, I think I'm done, I'll give you three minutes back of your day. Thank you."
+    }
+]
